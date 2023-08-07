@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #8c7575;
+}
+
+.login-links {
+    text-align: right;
+    font-size: 16px;
+    color: #333; /* Adjust the color as needed */
+  }
+  
+  .logintop {
+    /* Add your custom styles for the login links here */
+    text-decoration: none;
+    /* margin-left: 100px; */
+    padding: 5px 10px;
+    /* border: 4px solid #ccc; */
+    border-radius: 5px;
+    
+    background-color: #a5c6e9; /* Customize the background color */
+  }
+  
+  .logintop:hover {
+    background-color: #400ab4; /* Customize the background color on hover */
+    color: #ffffff;
+  }
+  
+
+
+
+/* Custom styles for the logo */
+.navbar-brand img {
+    margin-right: 10px; /* Add some spacing between the logo and navigation links */
+}
+
+/* Custom styles for the navigation links */
+.navbar-nav {
+    justify-content: flex-end; /* Align the links to the right */
+    margin-right: 10px; /* Add some spacing between the links */
+}
+
+.nav-item {
+    margin-right: 10px; /* Add spacing between each link */
+}
+
+/* Optional: Remove underlines from the links */
+.nav-link {
+    text-decoration: none;
+}
