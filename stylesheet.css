@@ -1,15 +1,18 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #8c7575;
+  /* background-color: #f5f2f2; */
+  background: linear-gradient(to bottom, #ffffff, #c5b3b3);
 }
 
 .login-links {
     text-align: right;
     font-size: 16px;
     color: #333; /* Adjust the color as needed */
+    justify-content: flex-end;
   }
   
   .logintop {
+    
     /* Add your custom styles for the login links here */
     text-decoration: none;
     /* margin-left: 100px; */
@@ -17,14 +20,22 @@ body {
     /* border: 4px solid #ccc; */
     border-radius: 5px;
     
-    background-color: #a5c6e9; /* Customize the background color */
-  }
+    
+    /* background-color: #b1b7be; /* Customize the background color */
+  } 
   
   .logintop:hover {
-    background-color: #400ab4; /* Customize the background color on hover */
+    background-color: #6123e8; /* Customize the background color on hover */
     color: #ffffff;
+    
   }
-  
+
+/*    
+  #loginreg{
+    justify-content: flex-end;
+    align-items: center;
+  } */
+
 
 
 
@@ -37,6 +48,13 @@ body {
 .navbar-nav {
     justify-content: flex-end; /* Align the links to the right */
     margin-right: 10px; /* Add some spacing between the links */
+    
+}
+.nav-item:hover {
+    background-color: #6123e8;
+    border-radius: 40px;
+    color: #ffffff !important; 
+  
 }
 
 .nav-item {
@@ -46,4 +64,55 @@ body {
 /* Optional: Remove underlines from the links */
 .nav-link {
     text-decoration: none;
+}
+
+
+
+/* login page below */
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 35px 25px 65px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;  
+
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
 }
