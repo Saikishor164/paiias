@@ -1,7 +1,11 @@
+
 body {
   font-family: Arial, sans-serif;
-  /* background-color: #f5f2f2; */
-  background: linear-gradient(to bottom, #ffffff, #c5b3b3);
+  /* background-image: url(Campus-Staff_1.png); */
+  background: linear-gradient(to left, #ffffff, #c5b3b3);
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  
 }
 
 .login-links {
@@ -26,7 +30,7 @@ body {
   
   .logintop:hover {
     background-color: #6123e8; /* Customize the background color on hover */
-    color: #ffffff;
+    color: white;
     
   }
 
@@ -35,8 +39,6 @@ body {
     justify-content: flex-end;
     align-items: center;
   } */
-
-
 
 
 /* Custom styles for the logo */
@@ -48,6 +50,7 @@ body {
 .navbar-nav {
     justify-content: flex-end; /* Align the links to the right */
     margin-right: 10px; /* Add some spacing between the links */
+    
     
 }
 .nav-item:hover {
@@ -116,3 +119,47 @@ body {
 	  border-top-right-radius: 0;
 	}
 }
+
+
+
+
+/* login page ends */
+
+
+
+
+/* footer here */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  color: #333;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #777;
+}
+
+.footer a:hover {
+  color: #333;
+}
+
+.footer hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.footer .container {
+  text-align: center;
+}
+/* footer ends */
