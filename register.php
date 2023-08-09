@@ -17,35 +17,29 @@
       <h2 class="form-signin-heading">Registration</h2>
       <label for="name">Name:</label>
       <br>
-      <input type="text" id="name" name="name">
+      <input type="text" class="form-control" id="name" name="name">
       <br>
       <label for="email">Email:</label> 
       <br>
-      <input type="text" id="email" name="email">
+      <input type="text" class="form-control" id="email" name="email">
       <br> 
       <label for="phone">Phone:</label>
       <br>
-      <input type="text" id="Phone" name="phone" minlength="9" maxlength="10"><br>
+      <input type="text" id="Phone" class="form-control" name="phone" minlength="9" maxlength="10"><br>
       <label for="Password">password:</label><br>
-      <input type="password" id="password" name="password">
+      <input type="password" class="form-control" id="password" name="password">
+
       <br><br>
 
 <!-- buttons -->
      <button type="submit" value="Submit">Register</button>
      <button type="reset" value="reset">Reset</button>
-
+    
   <br>
-  <a href="login.php">Login here!</a></p>
+  <a href="login.php">Login here!</a>
+  </form>
   </div>
 <!-- buttons ending -->
-</form>
-
-
-
-
-
-
-
 
 
  <?php include 'footer.php'; ?>
