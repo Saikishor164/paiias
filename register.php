@@ -12,10 +12,9 @@
   <body>
   <?php include 'header.php'; ?>
 
-
-  <h2 class="text-center text-primary mt-3 mb-4"><b>Registration</b> </h2>
-  <form action="register.php">
-    <div class="container">
+  <div class="wrapper">
+    <form class="form-signin" action="login.php" >       
+      <h2 class="form-signin-heading">Registration</h2>
       <label for="name">Name:</label>
       <br>
       <input type="text" id="name" name="name">
