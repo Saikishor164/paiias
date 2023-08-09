@@ -11,7 +11,6 @@
 <style>
   .img{
     background: url(./Campus-Staff_1.png);
-    
   }
 </style>
 
