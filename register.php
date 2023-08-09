@@ -11,20 +11,34 @@
   </head>
   <body>
   <?php include 'header.php'; ?>
+
+
   <h2 class="text-center text-primary mt-3 mb-4"><b>Registration</b> </h2>
   <form action="register.php">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email"><br> 
-  <label for="phone">Phone:</label><br>
-  <input type="text" id="Phone" name="phone" minlength="9" maxlength="10"><br>
-  <label for="Password">password:</label><br>
-  <input type="text" id="password" name="password"><br> <br>
-  <button type="submit" value="Submit">Register</button>
-  <button type="reset" value="reset">Reset</button>
-  <a href="login.php">Login here!</a></p>
+    <div class="container">
+      <label for="name">Name:</label>
+      <br>
+      <input type="text" id="name" name="name">
+      <br>
+      <label for="email">Email:</label> 
+      <br>
+      <input type="text" id="email" name="email">
+      <br> 
+      <label for="phone">Phone:</label>
+      <br>
+      <input type="text" id="Phone" name="phone" minlength="9" maxlength="10"><br>
+      <label for="Password">password:</label><br>
+      <input type="password" id="password" name="password">
+      <br><br>
 
+<!-- buttons -->
+     <button type="submit" value="Submit">Register</button>
+     <button type="reset" value="reset">Reset</button>
+
+  <br>
+  <a href="login.php">Login here!</a></p>
+  </div>
+<!-- buttons ending -->
 </form>
 
 
