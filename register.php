@@ -15,28 +15,28 @@
   <div class="wrapper">
     <form class="form-signin" action="login.php" >       
       <h2 class="form-signin-heading">Registration</h2>
-      <label for="name">Name:</label>
+      <!-- <label for="name">Name:</label> -->
+      
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       <br>
-      <input type="text" class="form-control" id="name" name="name">
-      <br>
-      <label for="email">Email:</label> 
-      <br>
-      <input type="text" class="form-control" id="email" name="email">
+      <!-- <label for="email">Email:</label> 
+      <br> -->
+      <input type="text" class="form-control" id="email" name="email" placeholder="Email">
       <br> 
-      <label for="phone">Phone:</label>
-      <br>
-      <input type="text" id="Phone" class="form-control" name="phone" minlength="9" maxlength="10"><br>
-      <label for="Password">password:</label><br>
-      <input type="password" class="form-control" id="password" name="password">
+      <!-- <label for="phone">Phone:</label>
+      <br> -->
+      <input type="text" id="Phone" class="form-control" name="phone" minlength="9" maxlength="10" placeholder="Phone"><br>
+      <!-- <label for="Password">password:</label><br> -->
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 
-      <br><br>
+      <br>
 
 <!-- buttons -->
-     <button type="submit" value="Submit">Register</button>
-     <button type="reset" value="reset">Reset</button>
+     <button type="submit" class="btn btn-outline-success" value="Submit">Register</button>
+     <button type="reset" class="btn btn-outline-success" value="reset">Reset</button>
     
-  <br>
-  <a href="login.php">Login here!</a>
+  <br><br>
+  <a href="login.php"><button class="btn btn-outline-success">Login here!</button> </a>
   </form>
   </div>
 <!-- buttons ending -->
