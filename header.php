@@ -10,10 +10,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <a class="navbar-brand" href="./index.php">
-        <img src="favicon.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
+        <img src="favicon.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top" >
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto ">
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Home</a>
             </li>
