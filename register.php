@@ -28,7 +28,6 @@
       <input type="text" id="Phone" class="form-control" name="phone" minlength="9" maxlength="10" placeholder="Phone"><br>
       <!-- <label for="Password">password:</label><br> -->
       <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-
       <br>
 
 <!-- buttons -->
