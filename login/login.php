@@ -94,12 +94,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/paiias/stylesheet.css">
     <style>
         body{ font: 14px sans-serif; }
         .wrapper{ width: 360px; padding: 20px; }
     </style>
 </head>
 <body>
+<?php include 'C:/xampp/htdocs/paiias/header.php'; ?>
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
@@ -109,8 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
         }        
         ?>
-
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" >
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
@@ -125,7 +126,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-        </form>
-    </div>
+        </form>     
+        <p class="nauman">Don't have asdadasd</p>
+</div>
+
+
+<?php include 'C:/xampp/htdocs/paiias/footer.php'; ?>
 </body>
 </html>
