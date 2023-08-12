@@ -137,9 +137,8 @@
 
 
       
-      <table border="1" class="table table-striped">
-    <t
-    r class="bg-dark text-white font-weight-bold">
+      <!-- <table border="1" class="table table-striped">
+    <tr class="bg-dark text-white font-weight-bold">
     
     <td>Examinations Passed:</td>
     
@@ -222,20 +221,15 @@
 
       </tr>
 
-    </table>
+    </table> -->
 
     <br/>
 
 
-
-
-
-
-<lab
-el for="competitve">Competitive Examnations appeared at:</label>
+<label for="competitve">Competitive Examnations appeared at:</label>
 
 <br>
-
+<!-- 
 <table border="1" class="table table-striped">
 
 <tr class="bg-dark text-white font-weight-bold">
@@ -299,7 +293,7 @@ el for="competitve">Competitive Examnations appeared at:</label>
         <td><input type="text" class="form-control" ></td>
         <td><input type="number" class="form-control" ></td>
     </tr>
-</table>
+</table> -->
 <p class="text-left">Please attach the marksheet of your last examination </p>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
