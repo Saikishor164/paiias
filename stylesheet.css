@@ -2,10 +2,19 @@
 body {
   font-family: Arial, sans-serif;
   /* background-image: url(Campus-Staff_1.png); */
-  background: linear-gradient(to left, #ffffff, #c5b3b3);
+  /* background: linear-gradient(to left, #ffffff, #c5b3b3); */
   /* background-repeat: no-repeat; */
   background-size: cover;
-  
+  background: linear-gradient(to bottom, #010B40, #0455BF);
+            /* Other CSS properties you may want to set for the body */
+}
+
+:root {
+  --color-1: #010B40;
+  --color-2: #010626;
+  --color-3: #021859;
+  --color-4: #03318C;
+  --color-5: #0455BF;
 }
 
 .login-links {
@@ -174,15 +183,10 @@ body {
 
 }
 
-
-
-
-
-
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #8ec6ff;
+  background-color: #FFF5EE;
   border-radius: 0.3rem;
 }
 @media (min-width: 576px) {
