@@ -27,7 +27,7 @@
         </ul>
     </div>
 </nav>
-<!-- <p id="loginreg"> <a class="logintop" href="login.php">login</a> | <a class="logintop" href="register.php">register</a> </p> -->
+<p id="loginreg"> <a class="logintop" href="login.php">login</a> | <a class="logintop" href="register.php">register</a> </p>
 </body>
 </html> -->
 
@@ -44,7 +44,7 @@
         <div class="container">
             <!-- Logo and Website Name -->
             <a class="navbar-brand" href="#">
-                <img src="./favicon.png" width="30" height="30" alt="Logo">
+                <img src="./favicon.png" class="img-fluid" width="30" height="30" alt="Logo">
                 PAI-IAS Coaching Centre
             </a>
             
