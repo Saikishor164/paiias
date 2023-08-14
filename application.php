@@ -23,7 +23,6 @@
       <h1 class="text-center text-white">Application form for IAS Coaching</h1>
       <p class="text-center text-danger">*Read the instructions Carefully before filling up this form.*</p>
       <!-- <br><br> -->
-      <hr>
       <p class="text-center font-italic fw-black fs-5 text-white"><u>Application form for Civil Services (Main Cum Personlity test) Coaching Programme_2023</u></p>
       
 
@@ -32,60 +31,59 @@
     <div class="col-sm-12 form-group">
       <!-- form method begins  -->
       <form action="application.php" method="post">
-      
-      
+      <p class="text-danger">*All the fields are Required*</p>
       
       <label for="name">Name</label>
 
       
-      <input class="form-control" type="text" placeholder="Student Name" name="name" id="name"><br>
+      <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" required><br>
       
       <label for="dob" class="label" >Date of Birth: </label>
       
-      <input class="form-control" type="datetime" placeholder="Date of Birth:" name="dob" id="dob"><br>
+      <input class="form-control" type="datetime" placeholder="Date of Birth:" name="dob" id="dob" required><br>
       
       <label for="father">Father's/Husband's Name: </label>
       
-      <input class="form-control" type="text" placeholder="Father's/Husband's Name" name="father" id="father"><br>
+      <input class="form-control" type="text" placeholder="Father's/Husband's Name" name="father" id="father" required ><br>
         
       <label for="locala">Local Address:</label>
       
-      <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala"></textarea><br>
+      <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala" required ></textarea><br>
       
       <label for="pin-Number">Pin - Number</label>
       
-      <input type="tel" class="form-control" minlength="6" maxlength="6" name="pin" id="pin" placeholder="Pin-Number"><br>
+      <input type="tel" class="form-control" minlength="6" maxlength="6" name="pin" id="pin" placeholder="Pin-Number" required><br>
       
       <label for="Phone No:">Phone No:</label>
       
-      <input type="tel" class="form-control" maxlength = "10" minlength ="9" pattern="[1-9]" placeholder="Phone No: "><br>
+      <input type="tel" class="form-control" maxlength = "10" minlength ="9" pattern="[1-9]" placeholder="Phone No: " name="phoneno" required><br>
       
       <label for="email">Email Id:</label>
       
-      <input type="email" class="form-control" placeholder="enter your email"  name="email" id="email"><br>
+      <input type="email" class="form-control" placeholder="enter your email"  name="email" id="email" required><br>
       
       <label for="mobile">Mobile no:</label>
       
-      <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="mobile"><br>
+      <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="mobile" required><br>
       
       <!-- checkbox for copying code from local a to permanent a  -->
       
       <label for="copyAddress">Same as Above:</label>
       
-      <input type="checkbox" id="copyAddress" name="copyAddress"><br>
+      <input type="checkbox" id="copyAddress" name="copyAddress" required><br>
       
       <label for="permanent">Permanent Address:</label>
       
       <textarea class="form-control" id="permanenta" rows="1" cols="50" placeholder="Click check-box to use local address " 
-      id="permanenta" name="permanenta"></textarea><br>
+      id="permanenta" name="permanenta" required></textarea><br>
       
       <label for="pin-Number">Pin - Number</label>
       
-      <input type="tel" class="form-control" minlength="6" maxlength="6" name="pin" id="pin" placeholder="Pin-Number"><br>
+      <input type="tel" class="form-control" minlength="6" maxlength="6" name="pinp" id="pin" placeholder="Pin-Number" required ><br>
       
       <label for="Phone No:">Phone No:</label>
       
-      <input type="tel" class="form-control" maxlength = "10" minlength ="9" pattern="[1-9]" placeholder="Phone No: "><br>
+      <input type="tel" class="form-control" maxlength = "10" minlength ="9" pattern="[1-9]" placeholder="Phone No: " name="phonenop" ><br>
 
 
 
@@ -93,15 +91,15 @@
 
       <label for="medium">Medium:</label>
       
-      <input type="radio" id="english" name="medium" value="English">
+      <input type="radio" id="english" name="medium" value="english" >
       
       <label for="english">English</label>
       
-      <input type="radio" id="hindi" name="medium" value="Hindi">
+      <input type="radio" id="hindi" name="medium" value="hindi" >
       
       <label for="hindi">Hindi</label>
       
-      <input type="radio" id="urdu" name="medium" value="Urdu">
+      <input type="radio" id="urdu" name="medium" value="urdu">
 
       <label for="urdu">Urdu</label><br> <br>
 <!-- the meduim selecion ends here -->
@@ -109,7 +107,7 @@
       
       <label for="medium">Category:</label>
       
-      <input type="radio" id="minority" name="category" value="minority">
+      <input type="radio" id="minority" name="category" value="minority" >
       
       <label for="minority">Minority</label>
       
@@ -129,7 +127,7 @@
       
       <label for="optionalsub">Optional Subject:</label>
       
-      <input type="text" class="form-control" name="optionalsub" id="optionalsub"><br>
+      <input type="text" class="form-control" name="optionalsub" id="optionalsub" ><br>
 
 
       
@@ -137,7 +135,7 @@
 
 
       
-      <!-- <table border="1" class="table table-striped">
+      <table border="1" class="table table-striped">
     <tr class="bg-dark text-white font-weight-bold">
     
     <td>Examinations Passed:</td>
@@ -156,13 +154,13 @@
   
   <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.</td>
   
-  <td><input type="text" class="form-control"></td>
+  <td><input type="text" class="form-control" required></td>
   
-  <td><input type="number" class="form-control" ></td>
+  <td><input type="number" class="form-control" required></td>
   
-  <td><input type="text" class="form-control" ></td>
+  <td><input type="text" class="form-control" required ></td>
   
-  <td><input type="number" class="form-control" ></td>
+  <td><input type="number" class="form-control" required ></td>
   
 </tr>
 
@@ -170,13 +168,13 @@
 
 <td class="bg-secondary text-white font-weight-bold" >B.A/ B.Sc./ B.Com./Engg.</td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number" class="form-control" ></td>
+<td><input type="number" class="form-control" required ></td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number"class="form-control" ></td>
+<td><input type="number"class="form-control" required ></td>
 
 </tr>
 
@@ -184,13 +182,13 @@
 
 <td class="bg-secondary text-white font-weight-bold" >Intermediate / Senoir Secondary (XII)</td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number" class="form-control" ></td>
+<td><input type="number" class="form-control" required ></td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number" class="form-control" ></td>
+<td><input type="number" class="form-control" required ></td>
 
 </tr>
 
@@ -198,13 +196,13 @@
 
 <td class="bg-secondary text-white font-weight-bold" >Matric / Higher Secondary(X)</td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number" class="form-control" ></td>
+<td><input type="number" class="form-control" required ></td>
 
-<td><input type="text" class="form-control"></td>
+<td><input type="text" class="form-control" required ></td>
 
-<td><input type="number" class="form-control" ></td>
+<td><input type="number" class="form-control" required ></td>
 
 </tr>
 
@@ -212,16 +210,16 @@
 
 <td class="bg-secondary text-white font-weight-bold">Others:</td>
 
-<td><input type="text" class="form-control" ></td>
+<td><input type="text" class="form-control" required></td>
 
-<td><input type="number" class="form-control" ></td>
-        <td><input type="text" class="form-control" ></td>
+<td><input type="number" class="form-control" required></td>
+        <td><input type="text" class="form-control" required></td>
 
-        <td><input type="number" class="form-control" ></td>
+        <td><input type="number" class="form-control" required></td>
 
       </tr>
 
-    </table> -->
+    </table>
 
     <br/>
 
@@ -229,7 +227,7 @@
 <label for="competitve">Competitive Examnations appeared at:</label>
 
 <br>
-<!-- 
+
 <table border="1" class="table table-striped">
 
 <tr class="bg-dark text-white font-weight-bold">
@@ -249,13 +247,13 @@
 
       <td class="bg-secondary text-white font-weight-bold">1</td>
 
-      <td><input type="text"class="form-control" ></td>
+      <td><input type="text"class="form-control" required ></td>
 
-      <td><input type="number" class="form-control" ></td>
+      <td><input type="number" class="form-control" required ></td>
 
-      <td><input type="text" class="form-control" ></td>
+      <td><input type="text" class="form-control" required ></td>
 
-      <td><input type="number" class="form-control" ></td>
+      <td><input type="number" class="form-control" required ></td>
 
     </tr>
 
@@ -263,42 +261,42 @@
 
     <td class="bg-secondary text-white font-weight-bold" >2</td>
 
-    <td><input type="text" class="form-control" ></td>
+    <td><input type="text" class="form-control" required ></td>
 
-    <td><input type="number" class="form-control" ></td>
+    <td><input type="number" class="form-control" required></td>
 
-    <td><input type="text" class="form-control"></td>
+    <td><input type="text" class="form-control" required ></td>
 
-    <td><input type="number" class="form-control" ></td>
+    <td><input type="number" class="form-control" required ></td>
     </tr>
 
     <tr>
         <td class="bg-secondary text-white font-weight-bold" >3</td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
+        <td><input type="text" class="form-control" required></td>
+        <td><input type="number" class="form-control" required ></td>
+        <td><input type="text" class="form-control" required ></td>
+        <td><input type="number" class="form-control" required ></td>
     </tr>
     <tr>
         <td class="bg-secondary text-white font-weight-bold" >4</td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
+        <td><input type="text" class="form-control" required ></td>
+        <td><input type="number" class="form-control" required ></td>
+        <td><input type="text" class="form-control" required ></td>
+        <td><input type="number" class="form-control" required ></td>
     </tr>
     <tr>
         <td class="bg-secondary text-white font-weight-bold">5</td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
-        <td><input type="text" class="form-control" ></td>
-        <td><input type="number" class="form-control" ></td>
+        <td><input type="text" class="form-control" required ></td>
+        <td><input type="number" class="form-control" required ></td>
+        <td><input type="text" class="form-control" required ></td>
+        <td><input type="number" class="form-control" required ></td>
     </tr>
-</table> -->
+</table>
 <p class="text-left">Please attach the marksheet of your last examination </p>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="file">Select a document to upload:</label>
-        <input type="file" name="file" id="file">
+        <input type="file" name="file" id="file" required >
         
         <input type="submit" value="Upload">
       </form>
@@ -312,7 +310,7 @@
             <!-- check box for user to agree -->
 
             <div class="form-check mt-3">
-              <input class="form-check-input" type="checkbox" id="acceptCheckbox">
+              <input class="form-check-input" type="checkbox" id="acceptCheckbox" required >
                 <label class="form-check-label" for="acceptCheckbox">
                      I accept the above conditions
                 </label>
