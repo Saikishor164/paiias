@@ -1,3 +1,15 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +30,7 @@
 
   </head>
   <body>
-    <?php include 'header.php' ?>
+    <?php include 'logheader.php' ?>
     <br>
       <h1 class="text-center text-white">Application form for IAS Coaching</h1>
       <p class="text-center text-danger">*Read the instructions Carefully before filling up this form.*</p>
