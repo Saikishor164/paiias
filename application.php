@@ -48,11 +48,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <label for="name">Name</label>
 
       
-      <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" required><br>
+      <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" required><br>
       
       <label for="dob" class="label" >Date of Birth: </label>
       
-      <input class="form-control" type="datetime" placeholder="Date of Birth:" name="dob" id="dob" required><br>
+      <input class="form-control" type="date" placeholder="Date of Birth:" name="dob" id="dob" required><br>
       
       <label for="father">Father's/Husband's Name: </label>
       
@@ -62,7 +62,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       
       <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala" required ></textarea><br>
       
-      <label for="pin-Number">Pin - Number</label>
+      <label for="pin-Number">Pincode</label>
       
       <input type="tel" class="form-control" minlength="6" maxlength="6" name="pin" id="pin" placeholder="Pin-Number" required><br>
       
