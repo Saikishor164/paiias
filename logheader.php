@@ -60,10 +60,11 @@
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link"  href=""><?php echo htmlspecialchars($_SESSION["username"]); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.php">Registration</a>
+                        <a class="nav-link" href="logout.php" >Sign Out </a>
+                        <!-- <a class="nav-link" href="register.php">Logout</a> -->
                     </li>
                 </ul>
             </div>
