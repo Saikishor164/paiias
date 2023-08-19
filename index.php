@@ -17,7 +17,7 @@
   </head>
   <body>
   <?php include 'header.php'; ?>
-<img src="./Campus-Staff_1.png" alt="campus staff">
+<!-- <img src="./Campus-Staff_1.png" alt="campus staff"> -->
 
 
 <?php include 'footer.php'; ?>

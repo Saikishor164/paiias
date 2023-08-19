@@ -16,8 +16,8 @@
             </div>
             <div class="col-md-6">
                 <h3>Contact Us</h3>
-                <p>Email: contact@example.com<br>
-                Phone: (123) 456-7890</p>
+                <p>
+                    <br> </p>
             </div>
         </div>
         <hr>
