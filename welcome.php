@@ -42,7 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <a href="application.php" class="btn btn-danger ml-3">Application Form</a> -->
 
 
-
+<!-- 
     <div class="container vertical-center">
         <h1 class="my-5 text-white">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
         <div class="mb-3">
@@ -50,8 +50,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
             <a href="application.php" class="btn btn-primary ml-3">Application Form</a>
         </div>
-    </div>
+    </div> -->
     
+
+    <div class="container vertical-center">
+    <h1 class="my-5 text-white">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+    <div class="mb-3">
+        <a href="reset-password.php" class="btn btn-warning mb-2 mb-md-0">Reset Your Password</a>
+        <a href="logout.php" class="btn btn-danger ml-md-3 mb-2 mb-md-0">Sign Out of Your Account</a>
+        <a href="application.php" class="btn btn-primary ml-md-3">Application Form</a>
+    </div>
+</div>
+
 <?php include 'footer.php'; ?>
 
 </body>

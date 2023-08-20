@@ -11,15 +11,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <style>
-  .img{
+.imgb {
     background: url(./Campus-Staff_1.png);
-  }
+    background-size: cover; /* Scale the background image to cover the entire element */
+    background-position: center; /* Center the background image */
+    height: 720px !important; /* You can adjust this height as needed */
+    width: 100% !important; /* Use 100% width to make the image responsive */
+}
+
+/* Media query for screens with max-width of 768px (typical mobile screen size) */
+@media (max-width: 768px) {
+    .imgb {
+        height: auto !important; /* Allow the image height to adjust according to its aspect ratio */
+    }
+}
+
 </style>
 
   </head>
   <body>
   <?php include 'header.php'; ?>
-<!-- <img src="./Campus-Staff_1.png" alt="campus staff"> -->
+<img class="imgb" src="./Campus-Staff_1.png" alt="campus staff">
 
 
 

@@ -126,7 +126,7 @@ require 'config.php';
           <table border="1" class="table table-striped">
             <tr class="bg-dark text-white font-weight-bold">
               <td>Examinations Passed:</td>
-              <td>Board/University</td>
+              <td>Board/ <br> University</td>
               <td>Year of Passing</td>
               <td>Subjects</td>
               <td>Percentage</td>
