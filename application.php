@@ -55,28 +55,30 @@ require 'config.php';
           <p class="text-danger">*All the fields are Required*</p>
 
           <label for="name"><abbr title="Write your full name in this textbox">Name</abbr></label>
-          <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" required><br>
+          <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
 
           <label for="dob" class="label">Date of Birth: </label>
           <input class="form-control" type="date" placeholder="Date of Birth:" name="dob" id="dob" required><br>
 
           <label for="father">Father's/Husband's Name: </label>
-          <input class="form-control" type="text" placeholder="Father's/Husband's Name" name="father" id="father" required><br>
+          <input class="form-control" type="text" onkeypress="textonly(event)" placeholder="Father's/Husband's Name" name="father" id="father" required><br>
 
           <label for="locala">Local Address:</label>
           <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala" required></textarea><br>
 
-          <label for="pin-Number">Pincode</label>
-          <input type="tel" class="form-control" minlength="6" maxlength="6" name="pin" id="pin" placeholder="Pin-Number" required><br>
+          <label for="pin1">Pincode</label>
+          <input type="tel" class="form-control" name="pin" id="pin1" placeholder="Pincode" onkeypress="numpin(event)" required><br>
 
           <label for="Phone No:">Phone No:</label>
-          <input type="tel" class="form-control" maxlength="10" minlength="9" pattern="[1-9]" placeholder="Phone No: " name="phoneno" required><br>
+          <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phoneno"  required><br>
 
+
+          
           <label for="email">Email Id:</label>
           <input type="email" class="form-control" placeholder="enter your email" name="email" id="email" required><br>
 
           <label for="mobile">Mobile no:</label>
-          <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="mobile" required><br>
+          <input type="number" class="form-control" name="mobile" id="mobile" placeholder="mobile"  onkeypress="numonly(event)" required><br>
 
           <!-- checkbox for copying code from local a to permanent a  -->
 
@@ -86,11 +88,11 @@ require 'config.php';
           <label for="permanent">Permanent Address:</label>
           <textarea class="form-control" id="permanenta" rows="1" cols="50" placeholder="Click check-box to use local address " id="permanenta" name="permanenta" required></textarea><br>
 
-          <label for="pin-Number">Pin - Number</label>
-          <input type="tel" class="form-control" minlength="6" maxlength="6" name="pinp" id="pin" placeholder="Pin-Number" required><br>
+          <label for="pin2">Pincode</label>
+          <input type="number" class="form-control" name="pinp" id="pin2" placeholder="Pincode"  onkeypress="numpin(event)" required><br>
 
           <label for="Phone No:">Phone No:</label>
-          <input type="tel" class="form-control" maxlength="10" minlength="9" pattern="[1-9]" placeholder="Phone No: " name="phonenop"><br>
+          <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phonenop"><br>
 
 
           <!-- the meduim selecion starts here -->
@@ -116,7 +118,7 @@ require 'config.php';
           <!-- the Category selecion endes here -->
 
           <label for="optionalsub">Optional Subject:</label>
-          <input type="text" class="form-control" name="optionalsub" id="optionalsub"><br>
+          <input type="text" class="form-control" onkeypress="textonly(event)" name="optionalsub" id="optionalsub"><br>
 
 
           <!-- Details of Examinations passed endes -->
@@ -134,42 +136,42 @@ require 'config.php';
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-            </tr>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
+            <!-- </tr> -->
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg.</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Intermediate / Senoir Secondary (XII)</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Matric / Higher Secondary(X)</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Others:</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
           </table>
           <br />
@@ -192,40 +194,40 @@ require 'config.php';
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">1</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" pattern="\d+" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">2</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" pattern="\d+" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">3</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" pattern="\d+" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
             <tr>
               <td class="bg-secondary text-white font-weight-bold">4</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" pattern="\d+" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
             <tr>
               <td class="bg-secondary text-white font-weight-bold">5</td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
-              <td><input type="text" class="form-control" required></td>
-              <td><input type="number" class="form-control" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" pattern="\d+" required></td>
+              <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
           </table>
           <br />
@@ -236,7 +238,7 @@ require 'config.php';
             <label for="file">Select a document to upload:</label>
             <input type="file" name="file" id="file" required>
 
-            <input type="submit" value="Upload">
+            
           </form>
           <br><br>
           <hr>
@@ -259,7 +261,7 @@ require 'config.php';
           <!-- button for submitting the form -->
           <br><br><br>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary me-md-2" type="button">Submit and Generate PDF</button>
+            <button class="btn btn-success me-md-2" type="submit">Submit</button>
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary me-md-2" type="reset">Reset</button>
           </div>
@@ -274,9 +276,66 @@ require 'config.php';
 
 
 
+<script>
+
+function numonly(event) {
+  const inputElement = event.target;
+  let input = inputElement.value;
+  
+  // Remove non-numeric characters
+  input = input.replace(/[^0-9]/g, '');
+
+  // Limit input to a maximum of 10 characters
+  if (input.length > 10) {
+    input = input.slice(0, 10);
+  }
+
+  inputElement.value = input;
+}
+
+function numyear(event) {
+  const inputElement = event.target;
+  let input = inputElement.value;
+  
+  // Remove non-numeric characters
+  input = input.replace(/[^0-9]/g, '');
+
+  // Limit input to a maximum of 10 characters
+  if (input.length > 4) {
+    input = input.slice(0, 4);
+  }
+
+  inputElement.value = input;
+}
+
+function numpin(event) {
+  const inputElement = event.target;
+  let input = inputElement.value;
+  
+  // Remove non-numeric characters
+  input = input.replace(/[^0-9]/g, '');
+
+  // Limit input to a maximum of 10 characters
+  if (input.length > 6) {
+    input = input.slice(0, 6);
+  }
+
+  inputElement.value = input;
+}
 
 
+  function textonly (event) {
+            var keyCode = event.keyCode || event.which;
+            var key = String.fromCharCode(keyCode);
+            
+            var regex = /^[a-zA-Z]*$/; // Regular expression to match alphabetic characters
+            
+            if (!regex.test(key)) {
+                event.preventDefault();
+            }
+        }
 
+        </script>
 
   <!-- </form> -->
   <!-- Optional JavaScript -->
