@@ -165,7 +165,6 @@ require 'config.php';
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
-
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Others:</td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
