@@ -33,6 +33,11 @@ require 'config.php';
     label {
       font-weight: 900;
     }
+
+    label span{
+      font-size: 12px;
+      font-weight: lighter;
+    }
   </style>
 
 </head>
@@ -54,7 +59,7 @@ require 'config.php';
         <form action="application.php" method="post">
           <p class="text-danger">*All the fields are Required*</p>
 
-          <label for="name"><abbr title="Write your full name in this textbox">Name</abbr></label>
+          <label for="name">Name <span>(Write your full name in this textbox)</span></label>
           <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
 
           <label for="dob" class="label">Date of Birth: </label>
