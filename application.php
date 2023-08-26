@@ -33,8 +33,31 @@ require 'config.php';
     label {
       font-weight: 900;
     }
+    
+    /* input:invalid{
+      animation:shake 300ms;
+      color:red;
+    }
+    @keyframes shake {
+      25% {
+        transform:translateX(4px);
+      }
+      50%{
+        transform:translateX(-4px);
+      }
+      75% {
+        transform:translateX(4px);
+      }
+  } */
 
     label span{
+      color:#ff5722 ;
+      font-size: 12px;
+      font-weight: lighter;
+    }
+
+    td span{
+      color:#ff5722 ;
       font-size: 12px;
       font-weight: lighter;
     }
@@ -59,49 +82,49 @@ require 'config.php';
         <form action="application.php" method="post">
           <p class="text-danger">*All the fields are Required*</p>
 
-          <label for="name">Name <span>(Write your full name in this textbox)</span></label>
+          <label for="name">Name <span>*</span></label>
           <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
 
-          <label for="dob" class="label">Date of Birth: </label>
+          <label for="dob" class="label">Date of Birth:  <span>*</span></label>
           <input class="form-control" type="date" placeholder="Date of Birth:" name="dob" id="dob" required><br>
 
-          <label for="father">Father's/Husband's Name: </label>
+          <label for="father">Father's/Husband's Name:  <span>*</span></label>
           <input class="form-control" type="text" onkeypress="textonly(event)" placeholder="Father's/Husband's Name" name="father" id="father" required><br>
 
-          <label for="locala">Local Address:</label>
+          <label for="locala">Local Address: <span>*</span></label>
           <textarea class="form-control" rows="1" cols="50" placeholder="Enter your address here..." id="locala" name="locala" required></textarea><br>
 
-          <label for="pin1">Pincode</label>
+          <label for="pin1">Pincode <span>*</span></label>
           <input type="tel" class="form-control" name="pin" id="pin1" placeholder="Pincode" onkeypress="numpin(event)" required><br>
 
-          <label for="Phone No:">Phone No:</label>
+          <label for="Phone No:">Phone No: <span>*</span></label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phoneno"  required><br>
 
 
           
-          <label for="email">Email Id:</label>
+          <label for="email">Email Id: <span>*</span></label>
           <input type="email" class="form-control" placeholder="enter your email" name="email" id="email" required><br>
 
-          <label for="mobile">Mobile no:</label>
+          <label for="mobile">Mobile no: <span>*</span></label>
           <input type="number" class="form-control" name="mobile" id="mobile" placeholder="mobile"  onkeypress="numonly(event)" required><br>
 
           <!-- checkbox for copying code from local a to permanent a  -->
 
           <label for="copyAddress">Same as Above:</label>
-          <input type="checkbox" id="copyAddress" name="copyAddress" required><br>
+          <input type="checkbox" id="copyAddress" name="copyAddress" ><br>
 
-          <label for="permanent">Permanent Address:</label>
+          <label for="permanent">Permanent Address: <span>*</span></label>
           <textarea class="form-control" id="permanenta" rows="1" cols="50" placeholder="Click check-box to use local address " id="permanenta" name="permanenta" required></textarea><br>
 
-          <label for="pin2">Pincode</label>
+          <label for="pin2">Pincode:  <span>*</span></label>
           <input type="number" class="form-control" name="pinp" id="pin2" placeholder="Pincode"  onkeypress="numpin(event)" required><br>
 
-          <label for="Phone No:">Phone No:</label>
+          <label for="Phone No:">Phone No: </label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phonenop"><br>
 
 
           <!-- the meduim selecion starts here -->
-          <label for="medium">Medium:</label>
+          <label for="medium">Medium: <span>*</span> </label>
           <input type="radio" id="english" name="medium" value="english">
           <label for="english">English</label>
           <input type="radio" id="hindi" name="medium" value="hindi">
@@ -111,7 +134,7 @@ require 'config.php';
           <!-- the meduim selecion ends here -->
 
           <!-- the Category selecion starts here -->
-          <label for="medium">Category:</label>
+          <label for="medium">Category:  <span>*</span> </label>
           <input type="radio" id="minority" name="category" value="minority">
           <label for="minority">Minority</label>
           <input type="radio" id="sc" name="category" value="sc">
@@ -123,8 +146,7 @@ require 'config.php';
           <!-- the Category selecion endes here -->
 
           <label for="optionalsub">Optional Subject:</label>
-          <input type="text" class="form-control" onkeypress="textonly(event)" name="optionalsub" id="optionalsub"><br>
-
+          <input type="text" class="form-control" onkeypress="textonly(event)" name="optional_subject" id="optionalsub"><br>
 
           <!-- Details of Examinations passed endes -->
 
@@ -140,15 +162,15 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.</td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.  <span>*</span> </td>
+              <td><input type="text" class="form-control" name="ma_msc_mcom_board" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="ma_msc_mcom_year" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" name="ma_msc_mcom_subjects" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" required></td>
             <!-- </tr> -->
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg.</td>
+              <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span>*</span> </td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
@@ -156,7 +178,7 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">Intermediate / Senoir Secondary (XII)</td>
+              <td class="bg-secondary text-white font-weight-bold">Intermediate / Senoir Secondary (XII):  <span>*</span> </td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
@@ -164,14 +186,14 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">Matric / Higher Secondary(X)</td>
+              <td class="bg-secondary text-white font-weight-bold">Matric / Higher Secondary(X):  <span>*</span> </td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">Others:</td>
+              <td class="bg-secondary text-white font-weight-bold">Others: </td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
@@ -197,7 +219,7 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">1</td>
+              <td class="bg-secondary text-white font-weight-bold">1 <span>*</span></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" pattern="\d+" required></td>
@@ -205,7 +227,7 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">2</td>
+              <td class="bg-secondary text-white font-weight-bold">2 <span>*</span></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" pattern="\d+" required></td>
@@ -213,21 +235,21 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">3</td>
+              <td class="bg-secondary text-white font-weight-bold">3 <span>*</span></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" pattern="\d+" required></td>
               <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">4</td>
+              <td class="bg-secondary text-white font-weight-bold">4 <span>*</span></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" pattern="\d+" required></td>
               <td><input type="number" class="form-control" pattern="\d+" required></td>
             </tr>
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">5</td>
+              <td class="bg-secondary text-white font-weight-bold">5 <span>*</span></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
               <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
               <td><input type="text" class="form-control" pattern="\d+" required></td>
@@ -264,7 +286,8 @@ require 'config.php';
           <hr>
           <!-- button for submitting the form -->
           <br><br><br>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
+            <input type="submit" value="submit">
             <button class="btn btn-success me-md-2" type="submit">Submit</button>
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary me-md-2" type="reset">Reset</button>
@@ -328,16 +351,29 @@ function numpin(event) {
 }
 
 
-  function textonly (event) {
-            var keyCode = event.keyCode || event.which;
-            var key = String.fromCharCode(keyCode);
+  // function textonly (event) {
+  //           var keyCode = event.keyCode || event.which;
+  //           var key = String.fromCharCode(keyCode);
             
-            var regex = /^[a-zA-Z]*$/; // Regular expression to match alphabetic characters
+  //           var regex = /^[a-zA-Z]*$/; // Regular expression to match alphabetic characters
             
-            if (!regex.test(key)) {
-                event.preventDefault();
-            }
-        }
+  //           if (!regex.test(key)) {
+  //               event.preventDefault();
+  //           }
+  //       }
+  
+
+  function textonly(event) {
+    var keyCode = event.keyCode || event.which;
+    var key = String.fromCharCode(keyCode);
+            
+    var regex = /^[a-zA-Z\s]*$/; // Regular expression to match alphabetic characters and spaces
+            
+    if (!regex.test(key)) {
+        event.preventDefault();
+    }
+}
+
 
         </script>
 
