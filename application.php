@@ -286,8 +286,9 @@ require 'config.php';
           <hr>
           <!-- button for submitting the form -->
           <br><br><br>
+          
           <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
-            <input type="submit" value="submit">
+            <input type="submit"  class="btn btn-success me-md-2" value="submit">
             <button class="btn btn-success me-md-2" type="submit">Submit</button>
             &nbsp;&nbsp;&nbsp;
             <button class="btn btn-primary me-md-2" type="reset">Reset</button>
