@@ -38,13 +38,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../js/jquery-3.6.0.min"></script>
+    <link rel="icon" type="image/x-icon" href="/favicon.jpg">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <!-- Logo and Website Name -->
             <a class="navbar-brand" href="#">
-                <img src="./favicon.png" class="img-fluid" width="30" height="30" alt="Logo">
+                <img src="./favicon.jpg" class="img-fluid" width="40" height="40" alt="Logo">
                 PAI-IAS Coaching Centre
             </a>
             

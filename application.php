@@ -33,23 +33,8 @@ require 'config.php';
     label {
       font-weight: 900;
     }
-    
-    /* input:invalid{
-      animation:shake 300ms;
-      color:red;
-    }
-    @keyframes shake {
-      25% {
-        transform:translateX(4px);
-      }
-      50%{
-        transform:translateX(-4px);
-      }
-      75% {
-        transform:translateX(4px);
-      }
-  } */
 
+    
     label span{
       color:#ff5722 ;
       font-size: 12px;
@@ -82,6 +67,22 @@ require 'config.php';
         <form action="application.php" method="post">
           <p class="text-danger">*All the fields are Required*</p>
 
+          <label for="workingprof">Working Professional</label>
+          <select id="workingprof" required name="workingprof" class="form-control" >
+          <option>Select Yes/No</option>  
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          </select>
+<br>
+
+<label for="residential">Have you joined Any Residential Academy earlier ?
+</label>
+          <select id="residential" required placeholder="Have you joined Any Residential Academy earlier" name="residential" class="form-control" >
+            <option> Select Yes/No</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          </select>
+      <br>
           <label for="name">Name <span>*</span></label>
           <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
 
@@ -100,8 +101,6 @@ require 'config.php';
           <label for="Phone No:">Phone No: <span>*</span></label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phoneno"  required><br>
 
-
-          
           <label for="email">Email Id: <span>*</span></label>
           <input type="email" class="form-control" placeholder="enter your email" name="email" id="email" required><br>
 
@@ -121,7 +120,6 @@ require 'config.php';
 
           <label for="Phone No:">Phone No: </label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phonenop"><br>
-
 
           <!-- the meduim selecion starts here -->
           <label for="medium">Medium: <span>*</span> </label>
@@ -145,6 +143,14 @@ require 'config.php';
           <label for="women">Women</label><br><br>
           <!-- the Category selecion endes here -->
 
+
+          <label for="residentialfac">Do you want to Avail Residential facilities?</label>
+          <select id="residentialfac" required name="residentialfac" class="form-control" >
+          <option>Select Yes/No</option>  
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          </select>
+<br>
           <label for="optionalsub">Optional Subject:</label>
           <input type="text" class="form-control" onkeypress="textonly(event)" name="optional_subject" id="optionalsub"><br>
 
@@ -163,18 +169,18 @@ require 'config.php';
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.  <span>*</span> </td>
-              <td><input type="text" class="form-control" name="ma_msc_mcom_board" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" name="ma_msc_mcom_year" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" name="ma_msc_mcom_subjects" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" required></td>
+              <td><input type="text" class="form-control" name="ma_msc_mcom_board" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="ma_msc_mcom_year" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="ma_msc_mcom_subjects" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" ></td>
             <!-- </tr> -->
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span>*</span> </td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
 
             <tr>
