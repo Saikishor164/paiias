@@ -8,6 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 
+// <?php echo htmlspecialchars($_SESSION["username"]); 
 
 require 'config.php';
 
@@ -64,7 +65,8 @@ require 'config.php';
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
         <!-- form method begins  -->
-        <form action="application.php" method="post">
+        <form action="database.php" method="post" enctype="multipart/form-data" >
+        <!-- <form action="database.php" method="post"> -->
           <p class="text-danger">*All the fields are Required*</p>
 
           <label for="workingprof">Working Professional</label>
@@ -92,7 +94,12 @@ require 'config.php';
           </select>
       <br>
           <label for="name">Name <span>*</span></label>
-          <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>" onkeypress="textonly(event)" required><br>
+          <!-- <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="" onkeypress="textonly(event)" required> -->
+
+          
+          <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" required>
+
+          <br>
 
           <label for="dob" class="label">Date of Birth:  <span>*</span></label>
           <input class="form-control" type="date" placeholder="Date of Birth:" name="dob" id="dob" required><br>
@@ -182,41 +189,35 @@ require 'config.php';
               <td><input type="text" class="form-control" name="ma_msc_mcom_subjects" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" ></td>
             <!-- </tr> -->
-
-
-
-            
             <tr>
               <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span>*</span> </td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-
-              
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="ba_bsc_board" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="ba_bsc_year" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="ba_bsc_subject" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="ba_bsc_percentage" pattern="\d+" ></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Intermediate / Senoir Secondary (XII):  <span>*</span> </td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td><input type="text" class="form-control" name="interboard" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="interyear" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" name="intersubject" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="interpercentage" pattern="\d+" required></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Matric / Higher Secondary(X):  <span>*</span> </td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td><input type="text" class="form-control" name="higherborad" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="higheryear" onkeypress="numyear(event)" required></td>
+              <td><input type="text" class="form-control" name="highersubject" onkeypress="textonly(event)" required></td>
+              <td><input type="number" class="form-control" name="higherpercentage" pattern="\d+" required></td>
             </tr>
             <tr>
               <td class="bg-secondary text-white font-weight-bold">Others: </td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="otherboard" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="othersyear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="othersubject" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="otherpercentage" pattern="\d+" ></td>
             </tr>
           </table>
           <br />
@@ -305,14 +306,12 @@ require 'config.php';
           <hr>
           <!-- button for submitting the form -->
           <br><br><br>
-          
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
-            <input type="submit"  class="btn btn-success me-md-2" value="submit">
-            <button class="btn btn-success me-md-2" type="submit">Submit</button>
-            &nbsp;&nbsp;&nbsp;
-            <button class="btn btn-primary me-md-2" type="reset">Reset</button>
-          </div>
-        </form>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
+    <button class="btn btn-success me-md-2" type="submit">Submit</button>
+    &nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary me-md-2" type="reset">Reset</button>
+</div>
+</form>
       </div>
     </div>
   </div>
@@ -419,7 +418,20 @@ function numpin(event) {
         }
       });
     });
+
+    // Prevent default form submission and manually submit the form
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Your additional form handling logic can go here if needed
+
+      // Submit the form
+      form.submit();
+    });
+  
   </script>
 </body>
 
 </html>
+
+
+<?php include 'footer.php' ?>
