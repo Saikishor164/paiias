@@ -59,7 +59,7 @@ body {
 
 /* Custom styles for the navigation links */
 .navbar-nav {
-    justify-content: flex-end; /* Align the links to the right */
+    justify-content: flex; /* Align the links to the right */
     margin-right: 10px; /* Add some spacing between the links */
     
     
@@ -249,3 +249,10 @@ body {
         }
     }
 /* popup css code ends here.  */
+
+
+.headerimg{
+  max-width: 100%; /* Make the images responsive */
+  height: auto; /* Maintain aspect ratio */
+      }
+

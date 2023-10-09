@@ -56,7 +56,7 @@ require 'config.php';
   <h1 class="text-center text-white">Application form for IAS Coaching</h1>
   <p class="text-center text-danger">*Read the instructions Carefully before filling up this form.*</p>
   <!-- <br><br> -->
-  <p class="text-center font-italic fw-black fs-5 text-white"><u>Application form for Civil Services (Main Cum Personlity test) Coaching Programme_2023</u></p>
+  <p class="text-center font-italic fw-black fs-5 text-white"><u>Application form for UPSC Residential Coaching & Foundation Course.</u></p>
 
 
 
@@ -81,6 +81,14 @@ require 'config.php';
             <option> Select Yes/No</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
+          </select>
+      <br>
+      <label for="residential">Centre for Entrance exam: 
+</label>
+          <select id="entrance" required placeholder="Select the Centre for Entrance Exam" name="entrance" class="form-control" >
+            <option> Select City</option>
+          <option value="pune">Pune</option>
+          <option value="mumbai">Mumbai</option>
           </select>
       <br>
           <label for="name">Name <span>*</span></label>

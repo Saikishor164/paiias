@@ -8,9 +8,7 @@ function closePopup() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-
-
-    // Redirect to 404 page after a delay (in milliseconds)
-    // setTimeout(function() {
-    //     window.location.href = "/404.html";
-    // }, 5000); // Adjust the delay as needed
+// Function to open a URL in a new tab
+function openURL() {
+    window.open('https://paiias.org/Brochure.pdf', '_blank');
+}
