@@ -39,14 +39,14 @@
     <link rel="stylesheet" href="stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" src="../js/jquery-3.6.0.min"></script>
-    <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.jpg">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <!-- Logo and Website Name -->
             <a class="navbar-brand" href="#">
-                <img src="./favicon.jpg" class="img-fluid" width="40" height="40" alt="Logo">
+                <img src="./images/favicon1.png" class="img-fluid" width="40" height="40" alt="Logo">
                 PAI-IAS Coaching Centre
             </a>
             

@@ -175,9 +175,14 @@ require 'config.php';
               <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" ></td>
             <!-- </tr> -->
 
+
+
+            
             <tr>
               <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span>*</span> </td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+
+              
               <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
               <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" pattern="\d+" ></td>

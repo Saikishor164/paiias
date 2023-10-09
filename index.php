@@ -5,14 +5,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="/stylesheet.css" type="text/css" >
+<link rel="stylesheet" href="stylesheet.css" type="text/css" >
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+
+
 <style>
 .imgb {
-    background: url(./Campus-Staff_1.png);
+    background: url(./images/Campus-Staff_1.png);
     background-size: cover; /* Scale the background image to cover the entire element */
     background-position: center; /* Center the background image */
     height: 720px !important; /* You can adjust this height as needed */
@@ -31,13 +34,20 @@
   </head>
   <body>
   <?php include 'header.php'; ?>
-<img class="imgb" src="./Campus-Staff_1.png" alt="campus staff">
+<img class="imgb" src="./images/Campus-Staff_1.png" alt="campus staff">
 
-
+<div class="overlay" id="overlay"> 
+    <!-- onclick="window.location.href='/paiias/login.php';" -->
+    <div class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img src="./images/popup-banner.jpg" alt="Popup Image">
+    </div>
+</div>
 
 
 
 <?php include 'footer.php'; ?>
+<script src="script.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
