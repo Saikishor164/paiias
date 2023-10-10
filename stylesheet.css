@@ -256,3 +256,17 @@ body {
   height: auto; /* Maintain aspect ratio */
       }
 
+
+      #backToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 20px;
+        font-size:large;
+        cursor: pointer;
+        z-index: 999; /* Ensure the button is above other elements */
+    }

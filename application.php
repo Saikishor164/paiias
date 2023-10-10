@@ -8,9 +8,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 
-// <?php echo htmlspecialchars($_SESSION["username"]); 
+// <?php echo htmlspecialchars($_SESSION["username"]);
 
 require 'config.php';
+
+
 
 
 
@@ -28,6 +30,9 @@ require 'config.php';
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js"></script>
 
   <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css">  -->
   <style>
@@ -54,6 +59,7 @@ require 'config.php';
 <body>
   <?php include 'logheader.php' ?>
   <br>
+  <a href="welcome.php"><svg style="padding-left: 30px;" xmlns="http://www.w3.org/2000/svg" height="2.8em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg></a>
   <h1 class="text-center text-white">Application form for IAS Coaching</h1>
   <p class="text-center text-danger">*Read the instructions Carefully before filling up this form.*</p>
   <!-- <br><br> -->
@@ -69,30 +75,13 @@ require 'config.php';
         <!-- <form action="database.php" method="post"> -->
           <p class="text-danger">*All the fields are Required*</p>
 
-          <label for="workingprof">Working Professional</label>
-          <select id="workingprof" required name="workingprof" class="form-control" >
-          <option>Select Yes/No</option>  
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-          </select>
-<br>
-
-<label for="residential">Have you joined Any Residential Academy earlier ?
-</label>
-          <select id="residential" required placeholder="Have you joined Any Residential Academy earlier" name="residential" class="form-control" >
-            <option> Select Yes/No</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-          </select>
-      <br>
-      <label for="residential">Centre for Entrance exam: 
-</label>
-          <select id="entrance" required placeholder="Select the Centre for Entrance Exam" name="entrance" class="form-control" >
-            <option> Select City</option>
-          <option value="pune">Pune</option>
-          <option value="mumbai">Mumbai</option>
-          </select>
-      <br>
+          <label for="residential">Batch:<span>*</span></label>
+          <select id="entrance" required placeholder="Select the Batch" name="entrance" class="form-control" required>
+            <option> Select Batch</option>
+          <option value="resbatch">Residential Batch</option>
+          <option value="funbatch">Foundation Batch (for Undergradutes)</option>
+          </select><br>
+          
           <label for="name">Name <span>*</span></label>
           <!-- <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="" onkeypress="textonly(event)" required> -->
 
@@ -136,6 +125,29 @@ require 'config.php';
           <label for="Phone No:">Phone No: </label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phonenop"><br>
 
+          <label for="workingprof">Working Professional<span>*</span></label>
+          <select id="workingprof" required name="workingprof" class="form-control" >
+          <option>Select Yes/No</option>  
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          </select>
+<br>
+
+          <label for="residential">Have you joined Any Residential Academy earlier ?<span>*</span>
+</label>
+          <select id="residential" required placeholder="Have you joined Any Residential Academy earlier" name="residential" class="form-control" >
+            <option> Select Yes/No</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          </select>
+      <br>
+      <label for="residential">Centre for Entrance exam: <span>*</span>
+</label>
+          <select id="entrance" required placeholder="Select the Centre for Entrance Exam" name="entrance" class="form-control" >
+            <option> Select City</option>
+          <option value="pune">Pune</option>
+          <option value="mumbai">Mumbai</option>
+          </select><br>
           <!-- the meduim selecion starts here -->
           <label for="medium">Medium: <span>*</span> </label>
           <input type="radio" id="english" name="medium" value="english">
@@ -183,14 +195,14 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.  <span>*</span> </td>
+              <td class="bg-secondary text-white font-weight-bold">M.A/M.Sc/M.Com.  <span></span> </td>
               <td><input type="text" class="form-control" name="ma_msc_mcom_board" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" name="ma_msc_mcom_year" onkeypress="numyear(event)" ></td>
               <td><input type="text" class="form-control" name="ma_msc_mcom_subjects" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" name="ma_msc_mcom_percentage" pattern="\d+" ></td>
             <!-- </tr> -->
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span>*</span> </td>
+              <td class="bg-secondary text-white font-weight-bold">B.A/ B.Sc./ B.Com./Engg. :  <span></span> </td>
               <td><input type="text" class="form-control" name="ba_bsc_board" onkeypress="textonly(event)" ></td>
               <td><input type="number" class="form-control" name="ba_bsc_year" onkeypress="numyear(event)" ></td>
               <td><input type="text" class="form-control" name="ba_bsc_subject" onkeypress="textonly(event)" ></td>
@@ -239,41 +251,41 @@ require 'config.php';
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">1 <span>*</span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" pattern="\d+" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">1</td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">2 <span>*</span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" pattern="\d+" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">2</td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
 
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">3 <span>*</span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" pattern="\d+" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">3 <span></span></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">4 <span>*</span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" pattern="\d+" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">4 <span></span></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
             <tr>
-              <td class="bg-secondary text-white font-weight-bold">5 <span>*</span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" required></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" required></td>
-              <td><input type="text" class="form-control" pattern="\d+" required></td>
-              <td><input type="number" class="form-control" pattern="\d+" required></td>
+              <td class="bg-secondary text-white font-weight-bold">5 <span></span></td>
+              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" pattern="\d+" ></td>
             </tr>
           </table>
           <br />
@@ -305,6 +317,11 @@ require 'config.php';
           <hr>
           <!-- button for submitting the form -->
           <br><br><br>
+
+          
+<button id="backToTopBtn" onclick="openURL()" class="animated-btn">Brochure<img class="pdf" src="./images/download-pdf.png"> </button>
+<a href="http://" id="backToTopBtn" onclick="openWH()" target="_blank" rel="noopener noreferrer">
+<svg xmlns="http://www.w3.org/2000/svg" height="2.8em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1bc026}</style><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
   <input type="submit" class="btn btn-success me-md-2" value="submit">
     <!-- <button class="btn btn-success me-md-2" type="submit">Submit</button> -->

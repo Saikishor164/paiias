@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="paiias">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/paiias.zip!/" />
+      <root url="jar://$PROJECT_DIR$/paiiasnew.zip!/" />
+      <root url="jar://$PROJECT_DIR$/09-01-2023paiias.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
