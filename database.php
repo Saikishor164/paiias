@@ -12,8 +12,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-
-
 require 'config.php';
 
 // Check if the form is submitted
