@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 // Initialize the session
 session_start();
@@ -12,14 +9,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-require 'config.php';
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+require "config.php";
 
     // Retrieve form data
-    $workingprof = $_POST["workingprof"];
-    $residential = $_POST["residential"];
     $entrance = $_POST["entrance"];
     $name = $_POST["name"];
     $dob = $_POST["dob"];
@@ -33,34 +26,89 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $permanenta = $copyAddress == "yes" ? $locala : $_POST["permanenta"];
     $pinp = $_POST["pinp"];
     $phonenop = $_POST["phonenop"];
+    $workingprof = $_POST["workingprof"];
+    $residential = $_POST["residential"];
+    $city = $_POST["city"];
     $medium = $_POST["medium"];
     $category = isset($_POST["category"]) ? $_POST["category"] : '';
     $residentialfac = $_POST["residentialfac"];
     $optional_subject = $_POST["optional_subject"];
     
-
-
-
-
+    $ma_msc_mcom_board = $_POST["ma_msc_mcom_board"];
+    $ma_msc_mcom_year = $_POST["ma_msc_mcom_year"];
+    $ma_msc_mcom_subjects = $_POST["ma_msc_mcom_subjects"];
+    $ma_msc_mcom_percentage = $_POST["ma_msc_mcom_percentage"];
     
-    // Add other fields accordingly
+    
+    $ba_bsc_board = $_POST["ba_bsc_board"];
+    $ba_bsc_year = $_POST["ba_bsc_year"];
+    $ba_bsc_subject = $_POST["ba_bsc_subject"];
+    $ba_bsc_percentage = $_POST["ba_bsc_percentage"];
+    
+    
+    $interboard = $_POST["interboard"];
+    $interyear = $_POST["interyear"];
+    $intersubject = $_POST["intersubject"];
+    $interpercentage = $_POST["interpercentage"];
+    
+    $higherborad = $_POST["higherborad"];
+    $higheryear = $_POST["higheryear"];
+    $highersubject = $_POST["highersubject"];
+    $higherpercentage = $_POST["higherpercentage"];
+    
+    
+    $otherboard = $_POST["otherboard"];
+    $othersyear = $_POST["othersyear"];
+    $othersubject = $_POST["othersubject"];
+    $otherpercentage = $_POST["otherpercentage"];
+    
+    
+    
+    $comonename = $_POST["comonename"];
+    $comoneyear = $_POST["comoneyear"];
+    $comoneroll = $_POST["comoneroll"];
+    $comoneresult = $_POST["comoneresult"];
+    
+    $comtwoname = $_POST["comtwoname"];
+    $comtwoyear = $_POST["comtwoyear"];
+    $comtworoll = $_POST["comtworoll"];
+    $comtworesult = $_POST["comtworesult"];
+    
+    $comthrname = $_POST["comthrname"];
+    $comthryear = $_POST["comthryear"];
+    $comthrroll = $_POST["comthrroll"];
+    $comthrresult = $_POST["comthrresult"];
+    
+    
+    $comfourname = $_POST["comfourname"];
+    $comfouryear = $_POST["comfouryear"];
+    $comfourroll = $_POST["comfourroll"];
+    $comfourresult = $_POST["comfourresult"];
+    
+    $comfifname = $_POST["comfifname"];
+    $comfifyear = $_POST["comfifyear"];
+    $comfifroll = $_POST["comfifroll"];
+    $comfifresult = $_POST["comfifresult"];
+    
+    $file = $_POST["file"];
 
-    // Insert data into the database
-    $sql = "INSERT INTO application (workingprof, residential, entrance, name, dob, father, locala, pin, phoneno, email, mobile, copyAddress, permanenta, pinp, phonenop, medium, category, residentialfac, optional_subject) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-if (mysqli_stmt_execute($stmt)) {
-    echo "Records inserted successfully.";
-} else {
-    echo "Error executing the statement: " . mysqli_stmt_error($stmt);
+
+$conn = new mysqli($servername, $username, $password, $db);
+
+
+if ($conn->connect_error){
+	die("Connection failed: ". $conn->connect_error);
 }
 
-// Close the statement
-mysqli_stmt_close($stmt);
+
+$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult`, `file` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', $ma_msc_mcom_year, '$ma_msc_mcom_subjects', $ma_msc_mcom_percentage, '$ba_bsc_board',$ba_bsc_year, '$ba_bsc_subject', $ba_bsc_percentage, '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', $higheryear, '$highersubject',$higherpercentage, '$otherboard', $othersyear, '$othersubject', $otherpercentage,'$comonename', $comoneyear, '$comoneroll', $comoneresult, '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', $comthryear, '$comthrroll', $comthrresult, '$comfourname', $comfouryear, '$comfourroll', $comfourresult, '$comfifname', $comfifyear, '$comfifroll', $comfifresult, '$file')" ;
+
+
+if ($conn->query($sql) === TRUE) {
+	echo "ADDED: ".$name.", ".$age.", ".$gender;
 } else {
-echo "Error preparing the statement: " . mysqli_error($link);
+	echo "Error: ".$sql."<br>".$conn->error;
 }
 
-// Close the connection
-mysqli_close($link);
+$conn->close();
 
-?>

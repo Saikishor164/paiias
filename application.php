@@ -77,7 +77,7 @@ require 'config.php';
 
           <label for="residential">Batch:<span>*</span></label>
           <select id="entrance" required placeholder="Select the Batch" name="entrance" class="form-control" required>
-            <option> Select Batch</option>
+            <option value=""> Select Batch</option>
           <option value="resbatch">Residential Batch</option>
           <option value="funbatch">Foundation Batch (for Undergradutes)</option>
           </select><br>
@@ -127,7 +127,7 @@ require 'config.php';
 
           <label for="workingprof">Working Professional<span>*</span></label>
           <select id="workingprof" required name="workingprof" class="form-control" >
-          <option>Select Yes/No</option>  
+          <option value="">Select Yes/No</option>  
           <option value="yes">Yes</option>
           <option value="no">No</option>
           </select>
@@ -136,18 +136,19 @@ require 'config.php';
           <label for="residential">Have you joined Any Residential Academy earlier ?<span>*</span>
 </label>
           <select id="residential" required placeholder="Have you joined Any Residential Academy earlier" name="residential" class="form-control" >
-            <option> Select Yes/No</option>
+            <option value=""> Select Yes/No</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
           </select>
       <br>
-      <label for="residential">Centre for Entrance exam: <span>*</span>
+      <label for="city">Centre for Entrance exam: <span>*</span>
 </label>
-          <select id="entrance" required placeholder="Select the Centre for Entrance Exam" name="entrance" class="form-control" >
-            <option> Select City</option>
+          <select id="city" required placeholder="Select the Centre for Entrance Exam" name="city" class="form-control" >
+            <option value=""> Select City</option>
           <option value="pune">Pune</option>
           <option value="mumbai">Mumbai</option>
-          </select><br>
+          </select><br> 
+
           <!-- the meduim selecion starts here -->
           <label for="medium">Medium: <span>*</span> </label>
           <input type="radio" id="english" name="medium" value="english">
@@ -173,7 +174,7 @@ require 'config.php';
 
           <label for="residentialfac">Do you want to Avail Residential facilities?</label>
           <select id="residentialfac" required name="residentialfac" class="form-control" >
-          <option>Select Yes/No</option>  
+          <option value="">Select Yes/No</option>  
           <option value="yes">Yes</option>
           <option value="no">No</option>
           </select>
@@ -252,47 +253,49 @@ require 'config.php';
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">1</td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" pattern="\d+" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="comonename" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="comoneyear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="comoneroll" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" name="comoneresult" pattern="\d+" ></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">2</td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" pattern="\d+" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="comtwoname" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="comtwoyear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="comtworoll" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" name="comtworesult" pattern="\d+" ></td>
             </tr>
 
             <tr>
               <td class="bg-secondary text-white font-weight-bold">3 <span></span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" pattern="\d+" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="comthrname" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="comthryear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="comthrroll" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" name="comthrresult" pattern="\d+" ></td>
             </tr>
             <tr>
               <td class="bg-secondary text-white font-weight-bold">4 <span></span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" pattern="\d+" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="comfourname" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="comfouryear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="comfourroll" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" name="comfourresult" pattern="\d+" ></td>
             </tr>
+
+
             <tr>
               <td class="bg-secondary text-white font-weight-bold">5 <span></span></td>
-              <td><input type="text" class="form-control" onkeypress="textonly(event)" ></td>
-              <td><input type="number" class="form-control" onkeypress="numyear(event)" ></td>
-              <td><input type="text" class="form-control" pattern="\d+" ></td>
-              <td><input type="number" class="form-control" pattern="\d+" ></td>
+              <td><input type="text" class="form-control" name="comfifname" onkeypress="textonly(event)" ></td>
+              <td><input type="number" class="form-control" name="comfifyear" onkeypress="numyear(event)" ></td>
+              <td><input type="text" class="form-control" name="comfifroll" pattern="\d+" ></td>
+              <td><input type="number" class="form-control" name="comfifresult" pattern="\d+" ></td>
             </tr>
           </table>
           <br />
           <!-- competitive Examinations apperead at endes -->
           <p class="text-left">Please attach the marksheet of your last examination </p>
 
-          <form action="upload.php" method="post" enctype="multipart/form-data">
+          
             <label for="file">Select a document to upload:</label>
             <input type="file" name="file" id="file" required>
 
@@ -329,7 +332,7 @@ require 'config.php';
     <button class="btn btn-primary me-md-2" type="reset">Reset</button>
 </div>
 </form>
-</form>
+
       </div>
     </div>
   </div>
