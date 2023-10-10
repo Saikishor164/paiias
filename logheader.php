@@ -12,7 +12,7 @@
 </head>
 
 <body>
-     <a href="index.php"><img class="headerimg" src="./images/header.png" alt="header image"></a>
+     <img class="headerimg" src="./images/header.png" alt="header image">
     <nav class="navbar navbar-expand-lg navbar-light bg-black">
         <div class="container">
             <!-- Logo and Website Name -->
