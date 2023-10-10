@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pinp = $_POST["pinp"];
     $phonenop = $_POST["phonenop"];
     $medium = $_POST["medium"];
-    $category = $_POST["category"];
+    $category = isset($_POST["category"]) ? $_POST["category"] : '';
     $residentialfac = $_POST["residentialfac"];
     $optional_subject = $_POST["optional_subject"];
     
@@ -48,26 +48,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Add other fields accordingly
 
     // Insert data into the database
-    $sql = "INSERT INTO students (workingprof, residential, entrance, name, dob, father, locala, pin, phoneno, email, mobile, copyAddress, permanenta, pinp, phonenop, medium, category, residentialfac, optional_subject) 
+    $sql = "INSERT INTO application (workingprof, residential, entrance, name, dob, father, locala, pin, phoneno, email, mobile, copyAddress, permanenta, pinp, phonenop, medium, category, residentialfac, optional_subject) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param("ssssssssssssssssss", $workingprof, $residential, $entrance, $name, $dob, $father, $locala, $pin, $phoneno, $email, $mobile, $copyAddress, $permanenta, $pinp, $phonenop, $medium, $category, $residentialfac, $optional_subject);
-
-        if ($stmt->execute()) {
-            // Data inserted successfully
-            echo "Data inserted successfully.";
-        } else {
-            // Error in execution
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
-    } else {
-        // Error in query preparation
-        echo "Error: " . $mysqli->error;
-    }
-
-    $mysqli->close(); // Close the database connection
+if (mysqli_stmt_execute($stmt)) {
+    echo "Records inserted successfully.";
+} else {
+    echo "Error executing the statement: " . mysqli_stmt_error($stmt);
 }
+
+// Close the statement
+mysqli_stmt_close($stmt);
+} else {
+echo "Error preparing the statement: " . mysqli_error($link);
+}
+
+// Close the connection
+mysqli_close($link);
+
 ?>

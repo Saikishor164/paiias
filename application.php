@@ -285,7 +285,6 @@ require 'config.php';
             <input type="file" name="file" id="file" required>
 
             
-          </form>
           <br><br>
           <hr>
           <H3 class="text-center">DECLARATION</H3>
@@ -307,10 +306,12 @@ require 'config.php';
           <!-- button for submitting the form -->
           <br><br><br>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
-    <button class="btn btn-success me-md-2" type="submit">Submit</button>
+  <input type="submit" class="btn btn-success me-md-2" value="submit">
+    <!-- <button class="btn btn-success me-md-2" type="submit">Submit</button> -->
     &nbsp;&nbsp;&nbsp;
     <button class="btn btn-primary me-md-2" type="reset">Reset</button>
 </div>
+</form>
 </form>
       </div>
     </div>
