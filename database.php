@@ -1,3 +1,4 @@
+
 <?php
 
 // Initialize the session
@@ -90,8 +91,30 @@ require "config.php";
     $comfifroll = $_POST["comfifroll"];
     $comfifresult = $_POST["comfifresult"];
     
-    $file = $_POST["file"];
+    // $file = $_POST["file"];
 
+    if (isset($_FILES["file"])) {
+        
+        // File properties
+        $file_name = $_FILES["file"]["name"];
+        $file_tmp = $_FILES["file"]["tmp_name"];
+        $file_size = $_FILES["file"]["size"];
+        $file_error = $_FILES["file"]["error"];
+
+        // Check if the file is not empty
+        if ($file_error === 0) {
+
+            // Specify the upload directory
+            $upload_dir = "uploads/";
+
+            // Generate a unique name for the file
+            $unique_name = uniqid() . "_" . $file_name;
+
+            // Set the file path
+            $file_path = $upload_dir . $unique_name;
+
+            // Move the file to the specified directory
+            move_uploaded_file($file_tmp, $file_path);
 
 $conn = new mysqli($servername, $username, $password, $db);
 
@@ -100,15 +123,95 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
+            // // Check if the columns already exist
+            // $check_columns_sql = "SHOW COLUMNS FROM studentdata LIKE 'file_name'";
+            // $result = $conn->query($check_columns_sql);
 
-$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult`, `file` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', $ma_msc_mcom_year, '$ma_msc_mcom_subjects', $ma_msc_mcom_percentage, '$ba_bsc_board',$ba_bsc_year, '$ba_bsc_subject', $ba_bsc_percentage, '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', $higheryear, '$highersubject',$higherpercentage, '$otherboard', $othersyear, '$othersubject', $otherpercentage,'$comonename', $comoneyear, '$comoneroll', $comoneresult, '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', $comthryear, '$comthrroll', $comthrresult, '$comfourname', $comfouryear, '$comfourroll', $comfourresult, '$comfifname', $comfifyear, '$comfifroll', $comfifresult, '$file')" ;
+            // if ($result->num_rows == 0) {
+            //     // Columns do not exist, so proceed with ALTER TABLE query
+            //     $alter_table_sql = "ALTER TABLE studentdata
+            //                        ADD COLUMN file_name VARCHAR(255),
+            //                        ADD COLUMN file_path VARCHAR(255)";
+
+            //     if ($conn->query($alter_table_sql) === FALSE) {
+            //         echo "Error altering table: " . $conn->error;
+            //     }
+            // }
+
+             //$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult` , `file_name`, `file_path` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', '$ma_msc_mcom_year', '$ma_msc_mcom_subjects', '$ma_msc_mcom_percentage', '$ba_bsc_board', '$ba_bsc_year', '$ba_bsc_subject', '$ba_bsc_percentage', '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', '$higheryear', '$highersubject','$higherpercentage', '$otherboard', '$othersyear', '$othersubject', '$otherpercentage','$comonename', '$comoneyear', '$comoneroll', '$comoneresult', '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', '$comthryear', '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear', '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear', '$comfifroll', '$comfifresult' , '$file_name', '$file_path')" ;
+             $insert_sql = "INSERT INTO studentdata (entrance, name, dob, father, locala, pin,
+             phoneno, email, mobile, copyAddress, permanenta,
+             pinp, phonenop, workingprof, residential, city,
+             medium, category, residentialfac, optional_subject,
+             ma_msc_mcom_board, ma_msc_mcom_year, ma_msc_mcom_subjects,
+             ma_msc_mcom_percentage, ba_bsc_board, ba_bsc_year,
+             ba_bsc_subject, ba_bsc_percentage, interboard, interyear,
+             intersubject, interpercentage, higherborad, higheryear,
+             highersubject, higherpercentage, otherboard, othersyear,
+             othersubject, otherpercentage, comonename, comoneyear,
+             comoneroll, comoneresult, comtwoname, comtwoyear,
+             comtworoll, comtworesult, comthrname, comthryear,
+             comthrroll, comthrresult, comfourname, comfouryear,
+             comfourroll, comfourresult, comfifname, comfifyear,
+             comfifroll, comfifresult, file_name, file_path) VALUES ('$entrance', '$name', '$dob', '$father', '$locala', '$pin',
+    '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta',
+    '$pinp', '$phonenop', '$workingprof', '$residential', '$city',
+    '$medium', '$category', '$residentialfac', '$optional_subject',
+    '$ma_msc_mcom_board', '$ma_msc_mcom_year', '$ma_msc_mcom_subjects',
+    '$ma_msc_mcom_percentage', '$ba_bsc_board', '$ba_bsc_year',
+    '$ba_bsc_subject', '$ba_bsc_percentage', '$interboard', $interyear,
+    '$intersubject', $interpercentage, '$higherborad', '$higheryear',
+    '$highersubject', '$higherpercentage', '$otherboard', '$othersyear',
+    '$othersubject', '$otherpercentage', '$comonename', '$comoneyear',
+    '$comoneroll', '$comoneresult', '$comtwoname', $comtwoyear,
+    '$comtworoll', '$comtworesult', '$comthrname', '$comthryear',
+    '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear',
+    '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear',
+    '$comfifroll', '$comfifresult', '$file_name', '$file_path')";
+
+            if ($conn->query($insert_sql) === TRUE) {
+                echo "successfully Registration Completed";
+            } else {
+                echo "Error: " . $insert_sql . "<br>" . $conn->error;
+            }
+
+            // Close the database connection
+            
 
 
-if ($conn->query($sql) === TRUE) {
-	echo "ADDED: ".$name.", ".$age.", ".$gender;
-} else {
-	echo "Error: ".$sql."<br>".$conn->error;
-}
+
+            
+
+        } else {
+            echo "Error uploading file!";
+        }
+
+
+    } else {
+        echo "Please select a file to upload!";
+    }
+
+ //$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult` , `file_name`, `file_path` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', '$ma_msc_mcom_year', '$ma_msc_mcom_subjects', '$ma_msc_mcom_percentage', '$ba_bsc_board', '$ba_bsc_year', '$ba_bsc_subject', '$ba_bsc_percentage', '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', '$higheryear', '$highersubject','$higherpercentage', '$otherboard', '$othersyear', '$othersubject', '$otherpercentage','$comonename', '$comoneyear', '$comoneroll', '$comoneresult', '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', '$comthryear', '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear', '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear', '$comfifroll', '$comfifresult' , '$file_name', '$file_path')" ;
+
+
+// if ($conn->query($sql) === TRUE) {
+// 	echo "successfully Registration Completed";
+// } else {
+// 	echo "Error: ".$sql."<br>".$conn->error;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// }
 
 $conn->close();
 

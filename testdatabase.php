@@ -93,7 +93,7 @@
     $comfifroll = $_POST["comfifroll"];
     $comfifresult = $_POST["comfifresult"];
     
-    $file = $_POST["file"];
+    // $file = $_POST["file"];
 
 
 // ... (your existing code)
@@ -173,4 +173,4 @@ echo "Competitive Exam 5 Roll No: $comfifroll <br>";
 echo "Competitive Exam 5 Result: $comfifresult <br>";
 
 // Display the file name
-echo "File: $file <br>";
+// echo "File: $file <br>";

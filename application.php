@@ -81,7 +81,7 @@ require 'config.php';
           <option value="resbatch">Residential Batch</option>
           <option value="funbatch">Foundation Batch (for Undergradutes)</option>
           </select><br>
-          
+
           <label for="name">Name <span>*</span></label>
           <!-- <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="" onkeypress="textonly(event)" required> -->
 
@@ -440,6 +440,9 @@ function numpin(event) {
       });
     });
 
+
+
+
     // Prevent default form submission and manually submit the form
     form.addEventListener('submit', function(event) {
       event.preventDefault();
@@ -448,6 +451,8 @@ function numpin(event) {
       // Submit the form
       form.submit();
     });
+
+
   
   </script>
 </body>
