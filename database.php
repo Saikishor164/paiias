@@ -58,6 +58,7 @@ require "config.php";
     $higherpercentage = $_POST["higherpercentage"];
     
     
+
     $otherboard = $_POST["otherboard"];
     $othersyear = $_POST["othersyear"];
     $othersubject = $_POST["othersubject"];
@@ -90,8 +91,9 @@ require "config.php";
     $comfifyear = $_POST["comfifyear"];
     $comfifroll = $_POST["comfifroll"];
     $comfifresult = $_POST["comfifresult"];
+
     
-    // $file = $_POST["file"];
+
 
     if (isset($_FILES["file"])) {
         
@@ -170,7 +172,8 @@ if ($conn->connect_error){
     '$comfifroll', '$comfifresult', '$file_name', '$file_path')";
 
             if ($conn->query($insert_sql) === TRUE) {
-                echo "successfully Registration Completed";
+                header("Location: success.php");
+                // echo "successfully Registration Completed";
             } else {
                 echo "Error: " . $insert_sql . "<br>" . $conn->error;
             }

@@ -71,7 +71,7 @@ p{
   <body>
   <?php include 'header.php'; ?>
   
-<marquee class="text-light h5" loop="" behavior="scroll" scrollamount="10" direction="left">Admissions are open. Registration for the entrance exam has started. Last date for Registration of Entrance exam 20/10/2023</marquee>
+
 <img class="imgb" src="./images/campus-ground.jpg" alt="campus staff">
 
 <div class="overlay" id="overlay"> 

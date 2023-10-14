@@ -1,11 +1,17 @@
 <?php
 session_start();
  
-// Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
+if (!isset($_SESSION['admin'])) {
+    // If not logged in, redirect to the login page
+    header("Location: index.php");
+    exit();
 }
+
+// Check if the user is logged in, otherwise redirect to login page
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+//     header("location: login.php");
+//     exit;
+// }
 
 ?>
 
@@ -53,7 +59,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
 
         // Perform a SELECT query based on the entered student name
-        $search_sql = "SELECT * FROM studentdata WHERE id = '$searchName'";
+        $search_sql = "SELECT * FROM studentdata WHERE name = '$searchName'";
         $result = $conn->query($search_sql);
 
         // Display the results

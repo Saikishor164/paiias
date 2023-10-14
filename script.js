@@ -10,7 +10,7 @@ function closePopup() {
 
 // Function to open a URL in a new tab
 function openURL() {
-    window.open('https://paiias.org/Brochure.pdf', '_blank', 'download');
+    window.open('https://paiias.org/Brochure.pdf', 'download');
 }
 
 // Function to open a URL in a new tab

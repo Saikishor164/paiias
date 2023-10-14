@@ -45,6 +45,10 @@
         </div>
     </nav>
 
+
+    
+    <marquee class="text-light h5" loop="" behavior="scroll" scrollamount="10" direction="left">Admissions are open. Registration for the entrance exam has started. Last date for Registration of Entrance exam 20/10/2023</marquee>
+
     <!-- Include Bootstrap JS and jQuery if needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
