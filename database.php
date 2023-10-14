@@ -107,7 +107,7 @@ require "config.php";
         if ($file_error === 0) {
 
             // Specify the upload directory
-            $upload_dir = "uploads/";
+            $upload_dir = "uploads/doc/";
 
             // Generate a unique name for the file
             $unique_name = uniqid() . "_" . $file_name;
@@ -117,6 +117,31 @@ require "config.php";
 
             // Move the file to the specified directory
             move_uploaded_file($file_tmp, $file_path);
+
+
+            if (isset($_FILES["fileqr"])) {
+        
+                // File properties
+                $fileqr_name = $_FILES["fileqr"]["name"];
+                $fileqr_tmp = $_FILES["fileqr"]["tmp_name"];
+                $fileqr_size = $_FILES["fileqr"]["size"];
+                $fileqr_error = $_FILES["fileqr"]["error"];
+        
+                // Check if the file is not empty
+                if ($fileqr_error === 0) {
+        
+                    // Specify the upload directory
+                    $uploadqr_dir = "uploads/payment/";
+        
+                    // Generate a unique name for the file
+                    $uniqueqr_name = uniqid() . "_" . $fileqr_name;
+        
+                    // Set the file path
+                    $fileqr_path = $uploadqr_dir . $uniqueqr_name;
+        
+                    // Move the file to the specified directory
+                    move_uploaded_file($fileqr_tmp, $fileqr_path);
+            
 
 $conn = new mysqli($servername, $username, $password, $db);
 
@@ -155,7 +180,7 @@ if ($conn->connect_error){
              comtworoll, comtworesult, comthrname, comthryear,
              comthrroll, comthrresult, comfourname, comfouryear,
              comfourroll, comfourresult, comfifname, comfifyear,
-             comfifroll, comfifresult, file_name, file_path) VALUES ('$entrance', '$name', '$dob', '$father', '$locala', '$pin',
+             comfifroll, comfifresult, file_name, file_path, fileqr_name, fileqr_path) VALUES ('$entrance', '$name', '$dob', '$father', '$locala', '$pin',
     '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta',
     '$pinp', '$phonenop', '$workingprof', '$residential', '$city',
     '$medium', '$category', '$residentialfac', '$optional_subject',
@@ -169,7 +194,7 @@ if ($conn->connect_error){
     '$comtworoll', '$comtworesult', '$comthrname', '$comthryear',
     '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear',
     '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear',
-    '$comfifroll', '$comfifresult', '$file_name', '$file_path')";
+    '$comfifroll', '$comfifresult', '$file_name', '$file_path', '$fileqr_name', '$fileqr_path')";
 
             if ($conn->query($insert_sql) === TRUE) {
                 header("Location: success.php");
@@ -218,3 +243,5 @@ if ($conn->connect_error){
 
 $conn->close();
 
+        }
+    }

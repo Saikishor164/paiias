@@ -52,6 +52,23 @@ require 'config.php';
       font-size: 12px;
       font-weight: lighter;
     }
+
+
+    .rowqr {
+        white-space: nowrap; /* Prevent line break */
+    }
+
+    .rowqr img,
+    .rowqr label,
+    .rowqr input {
+        display: inline-block; /* Display elements in the same line */
+        vertical-align: middle; /* Align elements vertically */
+    }
+
+    .rowqr label {
+        margin-right: 10px; /* Add some spacing between image and label */
+    }
+
   </style>
 
 </head>
@@ -297,9 +314,13 @@ require 'config.php';
 
           
             <label for="file">Select a document to upload:</label>
-            <input type="file" name="file" id="file" required>
-
-            
+            <input type="file" name="file" id="file" required> <br><br>
+            <h2>Application Fee is Rs.250/-</h2>
+            <div class="rowqr">
+    <img src="./images/Example-QR-code.jpg" alt="QR Code" width="250px">
+    <label for="fileqr"><h5>Please Upload the Screenshot of Payment. </h5>Select a document to upload:</label>
+    <input type="file" name="fileqr" id="fileqr" required>
+</div>
           <br><br>
           <hr>
           <H3 class="text-center">DECLARATION</H3>
