@@ -150,22 +150,6 @@ if ($conn->connect_error){
 	die("Connection failed: ". $conn->connect_error);
 }
 
-            // // Check if the columns already exist
-            // $check_columns_sql = "SHOW COLUMNS FROM studentdata LIKE 'file_name'";
-            // $result = $conn->query($check_columns_sql);
-
-            // if ($result->num_rows == 0) {
-            //     // Columns do not exist, so proceed with ALTER TABLE query
-            //     $alter_table_sql = "ALTER TABLE studentdata
-            //                        ADD COLUMN file_name VARCHAR(255),
-            //                        ADD COLUMN file_path VARCHAR(255)";
-
-            //     if ($conn->query($alter_table_sql) === FALSE) {
-            //         echo "Error altering table: " . $conn->error;
-            //     }
-            // }
-
-             //$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult` , `file_name`, `file_path` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', '$ma_msc_mcom_year', '$ma_msc_mcom_subjects', '$ma_msc_mcom_percentage', '$ba_bsc_board', '$ba_bsc_year', '$ba_bsc_subject', '$ba_bsc_percentage', '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', '$higheryear', '$highersubject','$higherpercentage', '$otherboard', '$othersyear', '$othersubject', '$otherpercentage','$comonename', '$comoneyear', '$comoneroll', '$comoneresult', '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', '$comthryear', '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear', '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear', '$comfifroll', '$comfifresult' , '$file_name', '$file_path')" ;
              $insert_sql = "INSERT INTO studentdata (entrance, name, dob, father, locala, pin,
              phoneno, email, mobile, copyAddress, permanenta,
              pinp, phonenop, workingprof, residential, city,
@@ -219,27 +203,6 @@ if ($conn->connect_error){
         echo "Please select a file to upload!";
     }
 
- //$sql = "INSERT INTO `studentdata` ( `entrance`, `name`, `dob`, `father`, `locala`, `pin, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`,`ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult` , `file_name`, `file_path` ) VALUES ( '$entrance', '$name', '$dob', '$father', '$locala', $pin, '$phoneno', '$email', '$mobile', '$copyAddress', '$permanenta', $pinp, '$phonenop', '$workingprof', '$residential', '$city', '$medium', '$category', '$residentialfac', '$optional_subject', '$ma_msc_mcom_board', '$ma_msc_mcom_year', '$ma_msc_mcom_subjects', '$ma_msc_mcom_percentage', '$ba_bsc_board', '$ba_bsc_year', '$ba_bsc_subject', '$ba_bsc_percentage', '$interboard', $interyear,'$intersubject', $interpercentage, '$higherborad', '$higheryear', '$highersubject','$higherpercentage', '$otherboard', '$othersyear', '$othersubject', '$otherpercentage','$comonename', '$comoneyear', '$comoneroll', '$comoneresult', '$comtwoname', $comtwoyear,'$comtworoll', $comtworesult, '$comthrname', '$comthryear', '$comthrroll', '$comthrresult', '$comfourname', '$comfouryear', '$comfourroll', '$comfourresult', '$comfifname', '$comfifyear', '$comfifroll', '$comfifresult' , '$file_name', '$file_path')" ;
-
-
-// if ($conn->query($sql) === TRUE) {
-// 	echo "successfully Registration Completed";
-// } else {
-// 	echo "Error: ".$sql."<br>".$conn->error;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// }
 
 $conn->close();
 
