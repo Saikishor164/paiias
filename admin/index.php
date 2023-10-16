@@ -6,18 +6,21 @@
     <title>Login Page</title>
 </head>
 <body>
-
-    <h2>Login</h2>
-
+<?php include 'logheader.php'; ?>
+<center>
+<div class="bg-light center">
+    <h2 class="text-center" >Login</h2>
+<br>
     <form action="process_login.php" method="post">
         <label for="username">Username:</label>
         <input type="text" name="username" required>
-
+<br><br>
         <label for="password">Password:</label>
         <input type="password" name="password" required>
-
-        <button type="submit">Login</button>
+<br><br>
+        <button class="btn btn-success me-md-2" type="submit">Login</button>
+        <br><br>
     </form>
-
+</div> </center>
 </body>
 </html>

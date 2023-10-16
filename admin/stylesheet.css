@@ -1,0 +1,273 @@
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-image: url(Campus-Staff_1.png); */
+  /* background: linear-gradient(to left, #ffffff, #c5b3b3); */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background: linear-gradient(to bottom, #010B40, #0455BF);
+            /* Other CSS properties you may want to set for the body */
+}
+
+
+:root {
+  --color-1: #010B40;
+  --color-2: #010626;
+  --color-3: #021859;
+  --color-4: #03318C;
+  --color-5: #0455BF;
+}
+
+.login-links {
+    text-align: right;
+    font-size: 16px;
+    color: #333; /* Adjust the color as needed */
+    justify-content: flex-end;
+  }
+  
+  .logintop {
+    
+    /* Add your custom styles for the login links here */
+    text-decoration: none;
+    /* margin-left: 100px; */
+    padding: 5px 10px;
+    /* border: 4px solid #ccc; */
+    border-radius: 5px;
+    
+    
+    /* background-color: #b1b7be; /* Customize the background color */
+  } 
+  
+  .logintop:hover {
+    background-color: #6123e8; /* Customize the background color on hover */
+  }
+
+
+  .nav-link:hover{
+    color: white !important;
+  }
+
+/*    
+  #loginreg{
+    justify-content: flex-end;
+    align-items: center;
+  } */
+
+/* Custom styles for the logo */
+.navbar-brand img {
+    margin-right: 10px; /* Add some spacing between the logo and navigation links */
+}
+
+/* Custom styles for the navigation links */
+.navbar-nav {
+    justify-content: flex; /* Align the links to the right */
+    margin-right: 10px; /* Add some spacing between the links */
+    
+    
+}
+.nav-item:hover {
+    background-color: #6123e8;
+    border-radius: 40px;
+    color: #ffffff !important; 
+  
+}
+
+.nav-item {
+    margin-right: 10px; /* Add spacing between each link */
+}
+
+/* Optional: Remove underlines from the links */
+.nav-link {
+    text-decoration: none;
+}
+
+
+
+/* login page below */
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 35px 25px 65px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 25px;  
+
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+}
+
+
+
+
+/* login page ends */
+
+
+
+
+/* footer here */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  color: #333;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #777;
+}
+
+.footer a:hover {
+  color: #333;
+}
+
+.footer hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.footer .container {
+  text-align: center;
+}
+/* footer ends */
+
+
+/* testarea */
+.nauman{
+  color:red !important;
+  background-color: #333 !important;
+
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #FFF5EE;
+  border-radius: 0.3rem;
+}
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 4rem 2rem;
+  }
+}
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
+
+
+/* popup image css code */
+
+        /* The overlay */
+        .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      /* The popup content */
+      .popup {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+    }
+
+        /* Close button */
+        .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 60px;
+          cursor: pointer;
+          color: black;
+      }
+
+      /* Style for the image */
+      .popup img {
+          max-width: 100%;
+          height: auto;
+      }
+
+      @media screen and (max-width: 600px) {
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+/* popup css code ends here.  */
+
+
+.headerimg{
+  max-width: 100%; /* Make the images responsive */
+  height: auto; /* Maintain aspect ratio */
+      }
+
+
+      #backToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 20px;
+        font-size:large;
+        cursor: pointer;
+        z-index: 999; /* Ensure the button is above other elements */
+    }
