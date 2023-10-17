@@ -32,7 +32,13 @@
                 </div>
                 <hr>
 
+
                 
+
+
+
+
+
                 <p class="text-center h6">Copyright &copy; 2023 | P. A. Inamdar IAS Coaching Institute, Pune | Devloped by AZAM I.T</p>
             </div>
         </footer>
