@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 11, 2023 at 10:54 PM
--- Server version: 5.6.51
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1
+-- Generation Time: Oct 17, 2023 at 12:47 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `paiias_form`
+-- Database: `paiias`
 --
 
 -- --------------------------------------------------------
@@ -34,13 +33,13 @@ CREATE TABLE `studentdata` (
   `name` varchar(255) DEFAULT NULL,
   `dob` date DEFAULT NULL,
   `father` varchar(255) DEFAULT NULL,
-  `locala` text,
+  `locala` text DEFAULT NULL,
   `pin` int(11) DEFAULT NULL,
   `phoneno` varchar(15) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `mobile` varchar(15) DEFAULT NULL,
   `copyAddress` varchar(3) DEFAULT NULL,
-  `permanenta` text,
+  `permanenta` text DEFAULT NULL,
   `pinp` int(11) DEFAULT NULL,
   `phonenop` varchar(15) DEFAULT NULL,
   `workingprof` varchar(3) DEFAULT NULL,
@@ -91,16 +90,17 @@ CREATE TABLE `studentdata` (
   `comfifroll` varchar(255) DEFAULT NULL,
   `comfifresult` int(11) DEFAULT NULL,
   `file_name` varchar(255) DEFAULT NULL,
-  `file_path` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `file_path` varchar(255) DEFAULT NULL,
+  `fileqr_name` varchar(255) NOT NULL,
+  `fileqr_path` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `studentdata`
 --
 
-INSERT INTO `studentdata` (`id`, `entrance`, `name`, `dob`, `father`, `locala`, `pin`, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`, `ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult`, `file_name`, `file_path`) VALUES
-(1, 'jkghkjh', 'ldsjkfhvg', '2023-10-16', ',kgj', 'ghljhlkj', 45645, 'lkjh', 'lkjh', 'lkjh', 'lkj', 'jhljk', 456, 'hkljh', 'klj', 'jl', 'kjhlk', 'jhl', 'kjh', 'lkj', 'lkjg', 'lkjg', 456, 'lkjh', 0.00, 'lkjh', 456, 'lkjh', 0.00, 'klj', 456, 'hkl', 0.00, 'kljh', 456, 'lkjh', 0.00, 'lkjh', 456, 'hl', 0.00, 'kjh', 456, 'klhj', 456, 'lkjh', 456, 'klj', 456, 'h', 456, 'jklg', 546, 'lkjg', 456, 'lkjg', 456, 'kljg', 4546, 'kjg', 6876, NULL, NULL),
-(2, 'resbatch', 'saiksihor rasala', '2023-10-10', 'Srinivasulu Rasala', 'Om society ,BT kawade road ,near dalvi Nagar. Pune-36', 411036, '08275727629', 'saikishorrasala418@gmail.com', '08275727629', 'on', 'Om society ,BT kawade road ,near dalvi Nagar. Pune-36', 411036, '08275727629', 'yes', 'yes', 'pune', 'english', '', 'yes', 'dfghdf', 'dsjkrgh', 845, 'jkh', 999.99, 'jkhvbkjhb', 63544, 'kjhvk', 999.99, 'kjh', 63543, 'kjhv', 999.99, 'kjhv', 6354, 'jkvhjkhv', 999.99, 'jhvkj', 6534, 'jhvkjvh', 999.99, 'xdfmvbd', 76, '8756', 8875, 'jhg', 76576, '58765', 8756, 'jhgj', 87658, '57', 5687, 'jgjgf', 7865, '8876', 58, 'jhvmjhg', 7568, '765', 87, NULL, NULL);
+INSERT INTO `studentdata` (`id`, `entrance`, `name`, `dob`, `father`, `locala`, `pin`, `phoneno`, `email`, `mobile`, `copyAddress`, `permanenta`, `pinp`, `phonenop`, `workingprof`, `residential`, `city`, `medium`, `category`, `residentialfac`, `optional_subject`, `ma_msc_mcom_board`, `ma_msc_mcom_year`, `ma_msc_mcom_subjects`, `ma_msc_mcom_percentage`, `ba_bsc_board`, `ba_bsc_year`, `ba_bsc_subject`, `ba_bsc_percentage`, `interboard`, `interyear`, `intersubject`, `interpercentage`, `higherborad`, `higheryear`, `highersubject`, `higherpercentage`, `otherboard`, `othersyear`, `othersubject`, `otherpercentage`, `comonename`, `comoneyear`, `comoneroll`, `comoneresult`, `comtwoname`, `comtwoyear`, `comtworoll`, `comtworesult`, `comthrname`, `comthryear`, `comthrroll`, `comthrresult`, `comfourname`, `comfouryear`, `comfourroll`, `comfourresult`, `comfifname`, `comfifyear`, `comfifroll`, `comfifresult`, `file_name`, `file_path`, `fileqr_name`, `fileqr_path`) VALUES
+(1, 'resbatch', 'saikishor Rasala', '2023-10-16', 'Srinivasulu Rasala', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 411036, '08275727629', 'saikishorrasala418@gmail.com', '08275727629', 'on', 'Sr. No54, Om Society, BT Kawade Rd, Near Adarsh High School, Pune -36', 411036, '08275727629', 'yes', 'yes', 'pune', 'english', 'minority', 'yes', 'dfghdf', 'jk', 8776, 'hgc', '76.00', 'bv', 76, 'jyf', '76.00', 'gh', 76, 'hg', '76.00', 'hg', 76, 'gh', '76.00', 'bvg', 76, 'gn', '76.00', 'hg', 7676, '76', 76, 'gh', 76, '76', 78, 'bh', 76, '76', 76, 'b', 76, '76', 78, 'bn', 7, '76', 76, 'MANAGEMENQ SELECTION LIST (1).pdf', 'uploads/doc/652d16b586400_MANAGEMENQ SELECTION LIST (1).pdf', 'selection list.pdf', 'uploads/payment/652d16b586eae_selection list.pdf');
 
 -- --------------------------------------------------------
 
@@ -111,25 +111,17 @@ INSERT INTO `studentdata` (`id`, `entrance`, `name`, `dob`, `father`, `locala`, 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(1, 'admin', '$2y$10$MhrUMES7cS1Lpk3z7JGe/eo2DKy/bBH6V5L9/WLaOrYyr9PkSxawy', '2023-09-25 21:35:28'),
-(3, 'Sana1234', '$2y$10$3xiI3DYeYq0pB2S.JXg4kul.KYq4MLr7w0YyFuERU0kAb7A9WrOr.', '2023-09-25 21:45:24'),
-(4, 'Sana793', '$2y$10$gPzmk/qYc9K6JTR/yeWkQ.Hh80FUSliTuoqzv5A5lNC204ojkONDm', '2023-10-06 04:57:20'),
-(6, 'patel_aiman30', '$2y$10$7og/r4BlGYzGJRugT91mEuJ6IeMC3R4VaEGDLqOsaBt6MUiawiD8W', '2023-10-10 04:17:07'),
-(7, 'wajidsgkd', '$2y$10$.7vlgnDB3abaRpwo3PNbE.mV7TuqYuTlbf4iW.1g8.KX6/lkAOsAu', '2023-10-10 04:29:18'),
-(8, 'Sana0704', '$2y$10$u7eIGXQPaFK4F8ROollbO.aOKn42j4nownM2qa8dXgUjx07IwgUBa', '2023-10-10 07:41:33'),
-(9, 'fardeenkhan', '$2y$10$/cE3.fqOIUTP20Yn80ZhzuouJ58vO0OBIgfBBzzLp.v0kozLJk8wm', '2023-10-10 10:04:59'),
-(10, 'Yahya', '$2y$10$RAo.lxKajAC6lOzQQgzdyuf.VNX/OIxe1bScQKGhbzCuhPy7G9/Du', '2023-10-11 04:15:15'),
-(11, 'Irfan', '$2y$10$lrzDNBl0MOXb5.uXrwDJyOzWREZr/SxEU4AlLrFo20OPOzwykYMVi', '2023-10-11 09:01:27'),
-(12, 'saikishor', '$2y$10$jK8NJ9w/5cxN4nGROaPzMewfQaT/FQjz5Vy7LE7C6Ygh8WrOd8jqe', '2023-10-11 21:34:36');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`) VALUES
+(1, 'admin', '', '$2y$10$BIaEKoUQJg6khi/kUtt7N.RxgsbsrPUn1KIXmEM.JZkpRgeGt7h3i', '2023-10-13 10:25:00');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +154,7 @@ ALTER TABLE `studentdata`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
