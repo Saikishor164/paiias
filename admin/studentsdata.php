@@ -65,7 +65,7 @@ if (!isset($_SESSION['admin'])) {
         }
 
         // Perform a SELECT query based on the entered student name
-        $search_sql = "SELECT * FROM studentdata WHERE name = '$searchName'";
+        $search_sql = "SELECT * FROM studentdata WHERE id = '$searchName'";
         $result = $conn->query($search_sql);
 
         // Display the results
@@ -140,26 +140,26 @@ if (!isset($_SESSION['admin'])) {
                 <th>Other Year</th>
                 <th>Other Subject</th>
                 <th>Other Percentage</th>
-                <th>Common Name</th>
-                <th>Common Year</th>
-                <th>Common Roll</th>
-                <th>Common Result</th>
-                <th>Other Two Name</th>
-                <th>Other Two Year</th>
-                <th>Other Two Roll</th>
-                <th>Other Two Result</th>
-                <th>Other Three Name</th>
-                <th>Other Three Year</th>
-                <th>Other Three Roll</th>
-                <th>Other Three Result</th>
-                <th>Other Four Name</th>
-                <th>Other Four Year</th>
-                <th>Other Four Roll</th>
-                <th>Other Four Result</th>
-                <th>Other Five Name</th>
-                <th>Other Five Year</th>
-                <th>Other Five Roll</th>
-                <th>Other Five Result</th>
+                <th>Competitive  one Name</th>
+                <th>Competitive one Year</th>
+                <th>Competitive one Roll</th>
+                <th>Competitive one Result</th>
+                <th>Competitive  Two Name</th>
+                <th>Competitive  Two Year</th>
+                <th>Competitive  Two Roll</th>
+                <th>Competitive  Two Result</th>
+                <th>Competitive  Three Name</th>
+                <th>Competitive  Three Year</th>
+                <th>Competitive  Three Roll</th>
+                <th>Competitive  Three Result</th>
+                <th>Competitive  Four Name</th>
+                <th>Competitive  Four Year</th>
+                <th>Competitive  Four Roll</th>
+                <th>Competitive  Four Result</th>
+                <th>Competitive  Five Name</th>
+                <th>Competitive  Five Year</th>
+                <th>Competitive  Five Roll</th>
+                <th>Competitive  Five Result</th>
                 <th>Marksheet File Name</th>
                 <th>Marksheet File Path</th>
                 <th>fee File Name</th>
@@ -238,7 +238,10 @@ if (!isset($_SESSION['admin'])) {
         
             echo "</table>";
         } else {
-            echo "<p>No data found for the entered student name.</p>";
+            echo '<br>';
+            echo "<p class='h3 text-center'>No data found for the entered student name.</p>";
+            echo '<br>';
+
         }
         
         $conn->close();
