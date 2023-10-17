@@ -16,13 +16,13 @@
 </head>
 <body>
 
-    
+
 <?php include 'logheader.php'; ?>
 <center>
-<div class="wrapper">
+<div class="bg-light text-center">
     
     <form action="process_login.php" method="post">
-    <h2 class="form-signin-heading" >Login</h2>
+    <h2 class="h1" >Login</h2>
 <br>
         <label for="username">Username:</label>
         <input type="text" name="username" required>
