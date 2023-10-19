@@ -16,6 +16,20 @@ require 'config.php';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -76,20 +90,26 @@ require 'config.php';
 <body>
   <?php include 'logheader.php' ?>
   <br>
+
+  <!-- left arrow button for gong back starts here   -->
   <a href="welcome.php"><svg style="padding-left: 30px;" xmlns="http://www.w3.org/2000/svg" height="2.8em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg></a>
+  <!-- left arrow button for gong back ends here   -->
+
+
+<!-- details of the application form starts here -->
   <h1 class="text-center text-white">Application form for IAS Coaching</h1>
   <p class="text-center text-danger">*Read the instructions Carefully before filling up this form.*</p>
   <!-- <br><br> -->
   <p class="text-center font-italic fw-black fs-5 text-white"><u>Application form for UPSC Residential Coaching & Foundation Course.</u></p>
 
+<!-- details of the application form ends here -->
 
-
+<!-- Form Starts Here -->
   <div class="container">
     <div class="row jumbotron">
       <div class="col-sm-12 form-group">
         <!-- form method begins  -->
         <form action="database.php" method="post" enctype="multipart/form-data" >
-        <!-- <form action="database.php" method="post"> -->
           <p class="text-danger">*All the fields are Required*</p>
 
           <label for="residential">Batch:<span>*</span></label>
@@ -99,10 +119,9 @@ require 'config.php';
           <option value="funbatch">Foundation Batch (for Undergradutes)</option>
           </select><br>
 
+          <!-- persnal details Start here  -->
           <label for="name">Name <span>*</span></label>
-          <!-- <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" value="" onkeypress="textonly(event)" required> -->
 
-          
           <input class="form-control" type="text" placeholder="Student Name" name="name" id="name" required>
 
           <br>
@@ -142,6 +161,9 @@ require 'config.php';
           <label for="Phone No:">Phone No: </label>
           <input type="number" class="form-control" onkeypress="numonly(event)" placeholder="Phone No: " name="phonenop"><br>
 
+          <!-- personal details Ends here -->
+
+          <!-- other details starts here -->
           <label for="workingprof">Working Professional<span>*</span></label>
           <select id="workingprof" required name="workingprof" class="form-control" >
           <option value="">Select Yes/No</option>  
@@ -198,8 +220,9 @@ require 'config.php';
 <br>
           <label for="optionalsub">Optional Subject:</label>
           <input type="text" class="form-control" onkeypress="textonly(event)" name="optional_subject" id="optionalsub"><br>
+          <!-- other details ends here -->
 
-          <!-- Details of Examinations passed endes -->
+          <!-- Details of Examinations passed starts -->
 
           <label for="examinations">Details of Examinations Passed:</label> 
           <br>
@@ -310,6 +333,9 @@ require 'config.php';
           </table>
           <br />
           <!-- competitive Examinations apperead at endes -->
+
+<!-- document uploading starts here -->
+
           <p class="text-left">Please attach the marksheet of your last examination </p>
 
           
@@ -321,6 +347,9 @@ require 'config.php';
     <label for="fileqr"><h5>Please Upload the Screenshot of Payment. </h5>Select a document to upload:</label>
     <input type="file" name="fileqr" id="fileqr" required>
 </div>
+
+<!-- document uploading ends here -->
+
           <br><br>
           <hr>
           <H3 class="text-center">DECLARATION</H3>
