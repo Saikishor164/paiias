@@ -49,6 +49,16 @@
             z-index: 999; /* Ensure the button is above other elements */
         }
 
+        .responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  border-color: white;
+  filter: contrast(120%);
+  background-color: #fff;
+  padding: 20px;
+}
 
 .about-section {
   padding: 50px;
@@ -106,6 +116,13 @@ p{
         <img src="./images/popup-banner.jpg" alt="Popup Image">
     </div>
 </div>
+
+<br><br>
+<center>
+<img src="./images/paiias banner new.jpg" alt="banner" class="responsive" width="500" height="800">
+</center>
+<br>
+
 
 <div class="about-section">
   <h1>About Us </h1> <br>
