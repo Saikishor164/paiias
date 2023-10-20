@@ -36,11 +36,15 @@
                         <a class="nav-link text-light" href="admission.php">Admission </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-light" target="_blank" href="https://forms.gle/USp9iAzRwYa3Eyo3A">Application Form</a>
+                    </li>
+                    
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-light" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="register.php">Registration</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

@@ -35,6 +35,7 @@
     <body>
     <?php include 'header.php'; ?>
     
+    <button id="backToTopBtnlink" onclick="openOURL()" class="blink">Application Form <img class="pdf" src="./images/download-pdf.png"> </button>
     <div class="container">
     <h1 class="text-center text-light">Admission Procedure</h1> 
     

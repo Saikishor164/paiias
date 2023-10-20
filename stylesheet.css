@@ -270,3 +270,31 @@ body {
         cursor: pointer;
         z-index: 999; /* Ensure the button is above other elements */
     }
+
+
+    #backToTopBtnlink {
+      position: fixed;
+      bottom: 270px;
+      right: 20px;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 15px 20px;
+      font-size:large;
+      cursor: pointer;
+      z-index: 999; /* Ensure the button is above other elements */
+  }
+
+
+  .blink {
+    animation: blinker 1s linear infinite;
+    color: red;
+    font-family: sans-serif;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

@@ -19,6 +19,22 @@
 
 <style>
 
+
+/* #backToTopBtnlink {
+            position: fixed;
+            bottom: 120px;
+            right: 120px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size:large;
+            cursor: pointer;
+            z-index: 999; /* Ensure the button is above other elements 
+        } */
+
+
 #backToTopBtn {
             position: fixed;
             bottom: 20px;
@@ -75,6 +91,13 @@ p{
   
 
 <img class="imgb" src="./images/campus-ground.jpg" alt="campus staff">
+
+<button id="backToTopBtnlink" onclick="openOURL()" class="blink">Application Form <img class="pdf" src="./images/download-pdf.png"> </button>
+
+
+
+<!-- <button id="backToTopBtnlink" onclick="openURL()" class="animated-btn">Brochure<img class="pdf" src="./images/download-pdf.png"> </button>
+<a href="http://" id="backToTopBtnlink" onclick="openWH()" target="_blank" rel="noopener noreferrer"> -->
 
 <div class="overlay" id="overlay"> 
     <!-- onclick="window.location.href='/paiias/login.php';" -->
