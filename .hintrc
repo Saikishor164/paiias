@@ -18,6 +18,13 @@
         "image-alt": "off"
       }
     ],
-    "scoped-svg-styles": "off"
+    "scoped-svg-styles": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "marquee": "off",
+        "duplicate-id-active": "off"
+      }
+    ]
   }
 }
