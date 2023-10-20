@@ -25,6 +25,12 @@
         "marquee": "off",
         "duplicate-id-active": "off"
       }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
+      }
     ]
   }
 }
