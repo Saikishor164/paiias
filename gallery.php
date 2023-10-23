@@ -35,6 +35,7 @@
         <img src="./images/3.jpg" alt="Lights" style="width:100%">
         <div class="caption">
           <!--<p>Lorem ipsum...</p> <br><br>-->
+          <br><br>
         </div>
     </div>
   </div>
@@ -43,6 +44,15 @@
         <img src="./images/5.jpg" alt="Nature" style="width:100%">
         <div class="caption">
           <!--<p>Lorem ipsum...</p><br><br>-->
+        </div>
+    </div>
+  </div>
+    <div class="col-md-6">
+    <div class="thumbnail">
+        <img src="./images/4.jpg" alt="Nature" style="width:100%">
+        <div class="caption">
+          <!--<p>Lorem ipsum...</p><br><br>-->
+          <br><br>
         </div>
     </div>
   </div>
